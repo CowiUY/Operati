@@ -4,7 +4,7 @@ Proyecto final de pasaje de año 2022.
 
 # Integrantes
 
-Gabriel Moreira, Diago Nicolai y Sebastián Santos
+[Gabriel Moreira](https://github.com/CowiUY), [Diago Nicolai](https://github.com/Diago-Nicolai) y [Sebastián Santos](https://github.com/sebaa023)
 
 ## Letra del Proyecto
 
