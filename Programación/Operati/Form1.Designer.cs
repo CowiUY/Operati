@@ -47,6 +47,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -55,9 +57,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "ESP",
             "EN "});
-            this.comboBox1.Location = new System.Drawing.Point(281, 22);
+            this.comboBox1.Location = new System.Drawing.Point(263, 20);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 21);
+            this.comboBox1.Size = new System.Drawing.Size(109, 23);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.Text = "IDIOMA";
             this.comboBox1.UseWaitCursor = true;
@@ -70,7 +72,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Verdana", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 31);
             this.label1.TabIndex = 1;
@@ -79,9 +81,9 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(371, 22);
+            this.comboBox2.Location = new System.Drawing.Point(378, 21);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(97, 21);
+            this.comboBox2.Size = new System.Drawing.Size(109, 23);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.Text = "FUTBOL";
             this.comboBox2.UseWaitCursor = true;
@@ -90,9 +92,9 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(680, 22);
+            this.comboBox3.Location = new System.Drawing.Point(493, 20);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(120, 21);
+            this.comboBox3.Size = new System.Drawing.Size(109, 23);
             this.comboBox3.TabIndex = 3;
             this.comboBox3.Text = "POLIDEPORTIVO";
             this.comboBox3.UseWaitCursor = true;
@@ -100,9 +102,9 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(577, 22);
+            this.comboBox4.Location = new System.Drawing.Point(723, 20);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(97, 21);
+            this.comboBox4.Size = new System.Drawing.Size(109, 23);
             this.comboBox4.TabIndex = 4;
             this.comboBox4.Text = "MOTOR";
             this.comboBox4.UseWaitCursor = true;
@@ -110,9 +112,9 @@
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(474, 22);
+            this.comboBox5.Location = new System.Drawing.Point(608, 21);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(97, 21);
+            this.comboBox5.Size = new System.Drawing.Size(109, 23);
             this.comboBox5.TabIndex = 5;
             this.comboBox5.Text = "BALONCESTO";
             this.comboBox5.UseWaitCursor = true;
@@ -120,16 +122,16 @@
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(855, 12);
+            this.comboBox6.Location = new System.Drawing.Point(924, 19);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(74, 21);
+            this.comboBox6.Size = new System.Drawing.Size(74, 23);
             this.comboBox6.TabIndex = 6;
             this.comboBox6.Text = "MAS +";
             this.comboBox6.UseWaitCursor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(983, 12);
+            this.button1.Location = new System.Drawing.Point(1148, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 7;
@@ -138,7 +140,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1103, 12);
+            this.button2.Location = new System.Drawing.Point(1148, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 8;
@@ -196,9 +198,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(855, 39);
+            this.button3.Location = new System.Drawing.Point(1021, 21);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 24);
+            this.button3.Size = new System.Drawing.Size(64, 21);
             this.button3.TabIndex = 15;
             this.button3.Text = "Buscar 🔍︎ ";
             this.button3.UseVisualStyleBackColor = true;
@@ -206,7 +208,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1259, 12);
+            this.button4.Location = new System.Drawing.Point(1268, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 33);
             this.button4.TabIndex = 16;
@@ -246,6 +248,31 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 634);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.SystemColors.InfoText;
+            this.groupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.comboBox2);
+            this.groupBox6.Controls.Add(this.comboBox5);
+            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.comboBox4);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.comboBox3);
+            this.groupBox6.Controls.Add(this.comboBox6);
+            this.groupBox6.Controls.Add(this.button1);
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox6.Location = new System.Drawing.Point(0, -8);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(1361, 80);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "groupBox6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,26 +282,17 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.groupBox6);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -299,6 +317,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
 
