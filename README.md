@@ -1,6 +1,6 @@
 # Operati
 
-Proyecto final de pasaje de año 2022.
+Proyecto final de pasaje de año 2022 en ESI.
 
 # Integrantes
 
