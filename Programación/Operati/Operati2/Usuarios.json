@@ -1,0 +1,32 @@
+[
+
+  {
+    "userId": "Pepe",
+    "mail": "Pepe123@gmail.com",
+    "password": "123",
+    "nivelPermiso": "2"
+  },
+
+  {
+    "userId": "Alfonso",
+    "mail": "Alfi@gmail.com",
+    "password": "1891",
+    "nivelPermiso": "1"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
