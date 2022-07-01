@@ -36,7 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtMail = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.BtnRegistrarUser = new System.Windows.Forms.Button();
+            this.btnRegisto = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -61,7 +62,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(42, 157);
+            this.btnLogin.Location = new System.Drawing.Point(161, 147);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(131, 25);
             this.btnLogin.TabIndex = 7;
@@ -103,7 +104,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(348, 257);
+            this.btnCerrar.Location = new System.Drawing.Point(341, 231);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 12;
@@ -111,23 +112,35 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // BtnRegistrarUser
+            // btnRegisto
             // 
-            this.BtnRegistrarUser.Location = new System.Drawing.Point(212, 157);
-            this.BtnRegistrarUser.Name = "BtnRegistrarUser";
-            this.BtnRegistrarUser.Size = new System.Drawing.Size(131, 25);
-            this.BtnRegistrarUser.TabIndex = 13;
-            this.BtnRegistrarUser.Text = "Registrar esta cuenta";
-            this.BtnRegistrarUser.UseVisualStyleBackColor = true;
-            this.BtnRegistrarUser.Click += new System.EventHandler(this.TxtAñadirUser_Click);
+            this.btnRegisto.Location = new System.Drawing.Point(25, 231);
+            this.btnRegisto.Name = "btnRegisto";
+            this.btnRegisto.Size = new System.Drawing.Size(131, 23);
+            this.btnRegisto.TabIndex = 13;
+            this.btnRegisto.Text = "Registrate Aqui";
+            this.btnRegisto.UseVisualStyleBackColor = true;
+            this.btnRegisto.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(39, 203);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "¿No tienes cuenta?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(435, 292);
-            this.Controls.Add(this.BtnRegistrarUser);
+            this.ClientSize = new System.Drawing.Size(432, 274);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnRegisto);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtMail);
@@ -154,6 +167,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtMail;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button BtnRegistrarUser;
+        private System.Windows.Forms.Button btnRegisto;
+        private System.Windows.Forms.Label label4;
     }
 }

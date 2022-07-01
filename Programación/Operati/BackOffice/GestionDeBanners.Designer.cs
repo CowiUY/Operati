@@ -43,15 +43,15 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(557, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(370, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(418, 298);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // btnImportImage
             // 
-            this.btnImportImage.Location = new System.Drawing.Point(605, 198);
+            this.btnImportImage.Location = new System.Drawing.Point(554, 339);
             this.btnImportImage.Name = "btnImportImage";
             this.btnImportImage.Size = new System.Drawing.Size(75, 23);
             this.btnImportImage.TabIndex = 2;
@@ -61,7 +61,7 @@
             // 
             // btnAgregoBanner
             // 
-            this.btnAgregoBanner.Location = new System.Drawing.Point(187, 198);
+            this.btnAgregoBanner.Location = new System.Drawing.Point(107, 166);
             this.btnAgregoBanner.Name = "btnAgregoBanner";
             this.btnAgregoBanner.Size = new System.Drawing.Size(128, 23);
             this.btnAgregoBanner.TabIndex = 4;
@@ -72,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 67);
+            this.label1.Location = new System.Drawing.Point(39, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 5;
@@ -81,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 107);
+            this.label2.Location = new System.Drawing.Point(64, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 6;
@@ -90,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(89, 150);
+            this.label3.Location = new System.Drawing.Point(9, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 7;
@@ -98,14 +98,14 @@
             // 
             // txtIdBanner
             // 
-            this.txtIdBanner.Location = new System.Drawing.Point(187, 67);
+            this.txtIdBanner.Location = new System.Drawing.Point(107, 35);
             this.txtIdBanner.Name = "txtIdBanner";
             this.txtIdBanner.Size = new System.Drawing.Size(235, 20);
             this.txtIdBanner.TabIndex = 9;
             // 
             // txtLink
             // 
-            this.txtLink.Location = new System.Drawing.Point(187, 104);
+            this.txtLink.Location = new System.Drawing.Point(107, 72);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(235, 20);
             this.txtLink.TabIndex = 10;
@@ -113,7 +113,7 @@
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(187, 147);
+            this.txtTitulo.Location = new System.Drawing.Point(107, 115);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(155, 20);
             this.txtTitulo.TabIndex = 11;

@@ -20,15 +20,15 @@ namespace BackOffice
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form formuUser = new GestionDeUsuarios();
-            formuUser.Show();
+            Form formUser = new GestionDeUsuarios();
+            formUser.Show();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-          Form formuBanner = new GestionDeBanners();
-            formuBanner.Show();
+            Form formBanners1 = new GestionDeBanners();
+            formBanners1.Show();
         }
 
         private void BOForm_Load(object sender, EventArgs e)
@@ -38,8 +38,8 @@ namespace BackOffice
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form formuDeporte = new GestionDeDeportes();
-            formuDeporte.Show();
+            Form formDepo = new GestionDeDeportes();
+            formDepo.Show();
         }
     }
 }

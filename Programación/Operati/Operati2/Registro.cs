@@ -28,7 +28,8 @@ namespace Operati2
             {
 
 
-                if (txtMailusuario.Text != "" && txtContraUsuario.Text != "" && txtNombreUsuario.Text != ""){
+                if (txtMailusuario.Text != "" && txtContraUsuario.Text != "" && txtNombreUsuario.Text != "")
+                {
 
                     if (txtContraUsuario.Text == txtConfirmarContra.Text)
                     {
@@ -38,11 +39,11 @@ namespace Operati2
                         newUsu.UserID = txtNombreUsuario.Text;
                         newUsu.mail = txtMailusuario.Text;
 
-                                 newUsu.password = txtContraUsuario.Text;
+                        newUsu.password = txtContraUsuario.Text;
 
                         newUsu.nivelPermiso = 3;
-         
-      
+
+
                         usuarios.Add(newUsu);
                         Logica.SerializeUsuarios(usuarios);
                         MessageBox.Show("Nuevo usuario creado CORRECTAMENTE");
@@ -57,6 +58,11 @@ namespace Operati2
 
                 }
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

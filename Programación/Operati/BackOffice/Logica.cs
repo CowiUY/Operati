@@ -23,7 +23,7 @@ namespace BackOffice
 
         }
 
-        public static void SerializeDeportes(List<Deporte> deportes, string path = "SerialJson\\Usuarios.json")
+        public static void SerializeDeportes(List<Deporte> deportes, string path = "SerialJson\\Deportes.json")
         {
 
             string deportesJsonData = JsonSerializer.Serialize(deportes);
@@ -32,11 +32,12 @@ namespace BackOffice
 
         }
 
-        public static void SerializeBanners(List<Banner> banners, string path = "SerialJson\\Usuarios.jsonn")
+        public static void SerializeBanners(List<Banner> banners, string path = "SerialJson\\Banners.json")
         {
 
-            string bannersJsonData = JsonSerializer.Serialize(banners);
-            File.WriteAllText(path, bannersJsonData);
+            string deportesJsonData = JsonSerializer.Serialize(banners);
+            File.WriteAllText(path, deportesJsonData);
+
 
         }
 
@@ -60,6 +61,16 @@ namespace BackOffice
 
             var usuarios = JsonSerializer.Deserialize<List<Usuario>>(jsonFile);
             return usuarios;
+
+        }
+
+        public static List<Banner> DeserializeBanners(String jsonFile)
+        {
+
+            var Banners = JsonSerializer.Deserialize<List<Banner>>(jsonFile);
+            return Banners;
+
+
 
         }
 

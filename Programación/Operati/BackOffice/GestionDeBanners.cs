@@ -20,14 +20,20 @@ namespace BackOffice
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(.jpg; *.jpeg; *.gif; *.bmp; *.png)|.jpg; *.jpeg; *.gif; *.bmp; *.png";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                image = new Bitmap(open.FileName);
-                pictureBox1.Image = image;
-            }
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(.jpg; *.jpeg; *.gif; *.bmp; *.png)|.jpg; *.jpeg; *.gif; *.bmp; *.png";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    image = new Bitmap(open.FileName);
+                    pictureBox1.Image = image;
+                }
 
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GestionDeBanners_Load(object sender, EventArgs e)
@@ -37,51 +43,47 @@ namespace BackOffice
 
         private void btnAgregoBanner_Click(object sender, EventArgs e)
         {
-            
-                if (txtIdBanner.Text != "" && txtLink.Text != "" && txtTitulo.Text != "" && image != null) {
+            try
+            {
 
-                    var Banners = Logica.(Logica.GetJson("SerialJson\\Usuarios.json"));
+                if (txtIdBanner.Text != "" && txtLink.Text != "" && txtTitulo.Text != "" && image != null)
+                {
+
+                    var Banners = Logica.DeserializeBanners(Logica.GetJson("SerialJson\\Banners.json"));
 
                     Banner banner = new Banner();
 
                     banner.IdBanner = 0;
                     banner.Link = txtLink.Text;
                     banner.Titulo = txtTitulo.Text;
-                    banner.BannerImage = null;
+                    banner.Imagen = null;
 
-                    if (Banners != null) {
+                    Banners.Add(banner);
+                    Logica.SerializeBanners(Banners);
 
-                        //Banners.Add(banner);
-                        //Logica.SerializeBanners(Banners);
-
-                    }
-                    else {
-
-                        List<Banner> list = new List<Banner>();
-                        Logica.SerializeBanners(list);
-
-                    }
-                    MessageBox.Show("");
-                    //CargarBanners();
-
-                
+                    MessageBox.Show("Banner añadido");
 
 
-
-
-
-
-
-
-
-
-
-
-
+                }
 
 
 
             }
+
+             catch (Exception ex){
+
+                MessageBox.Show(ex.Message);
+
+                }
+
+
+
+
+
+
+
+
+
 
 
 

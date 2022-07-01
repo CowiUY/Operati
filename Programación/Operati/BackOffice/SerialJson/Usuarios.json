@@ -3,15 +3,15 @@
   {
     "userId": "Pepe",
     "mail": "Pepe123@gmail.com",
-    "password": "123",
-    "nivelPermiso": "2"
+    "password": "a",
+    "nivelPermiso": 3
   },
 
   {
     "userId": "Alfonso",
     "mail": "Alfi@gmail.com",
-    "password": "1891",
-    "nivelPermiso": "1"
+    "password": "si",
+    "nivelPermiso": 1
   }
 
 

@@ -26,10 +26,24 @@ namespace BackOffice
                 NomEquipo = txtNomEquipo.Text
             };
 
-            var Deporte = Logica.DeserializeDeportes(Logica.GetJson("SerialJson\\Usuarios.json"));
+            var Deporte = Logica.DeserializeDeportes(Logica.GetJson("SerialJson\\Deportes.json"));
             Logica.SerializeDeportes(Deporte);
 
+            if (Deporte != null)
+            {
+                Deporte.Add(newDeporte);
+                Logica.SerializeDeportes(Deporte);
+            }
+       
+            else
+            {
+
+                List<Deporte> Depo = new List<Deporte>();
+                Logica.SerializeDeportes(Depo);
+
+            }
         }
+        
 
         private void txtTipoDeporte_TextChanged(object sender, EventArgs e)
         {

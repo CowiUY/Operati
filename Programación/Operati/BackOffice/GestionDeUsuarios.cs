@@ -24,17 +24,31 @@ namespace BackOffice
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("Usuarios.json"));
+            
+            var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
             Usuario newUser = new Usuario
+
             {
                 UserID = txtUsuario.Text,
                 mail = txtMail.Text,
                 password = txtContraseña.Text,
                 nivelPermiso = 1
             };
-            usuarios.Add(newUser);
-            Logica.SerializeUsuarios(usuarios);
 
+            if (usuarios != null)
+            {
+                usuarios.Add(newUser);
+                Logica.SerializeUsuarios(usuarios);
+            }
+            else {
+
+                List<Usuario> User = new List<Usuario>();
+                    Logica.SerializeUsuarios(User);
+
+            }
+          
+
+            
         }
     }
 }

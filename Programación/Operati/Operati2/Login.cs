@@ -37,19 +37,20 @@ namespace Operati2
         {
             try
             {
-                bool match = false;
+                bool Igualdad = false;
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
                 var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
 
-                if (usuarios != null) {
+                if (usuarios != null)
+                {
 
 
                     foreach (var usuario in usuarios)
                     {
                         if (usuario.UserID == user && usuario.password == password && usuario.nivelPermiso == 3)
                         {
-                            match = true;
+                            Igualdad = true;
                         }
 
 
@@ -59,51 +60,30 @@ namespace Operati2
 
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
+
+
         }
 
-        private void TxtAñadirUser_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form formulario = new Registro();
-            formulario.Show();
+            Form formRegister = new Registro();
+            formRegister.Show();
+
 
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
