@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PBimagen = new System.Windows.Forms.PictureBox();
             this.btnImportImage = new System.Windows.Forms.Button();
             this.btnAgregoBanner = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblIdBanner = new System.Windows.Forms.Label();
+            this.lblLink = new System.Windows.Forms.Label();
+            this.lblTitNom = new System.Windows.Forms.Label();
             this.txtIdBanner = new System.Windows.Forms.TextBox();
             this.txtLink = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBimagen)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PBimagen
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(370, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(418, 298);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.PBimagen.BackColor = System.Drawing.Color.Transparent;
+            this.PBimagen.Location = new System.Drawing.Point(370, 24);
+            this.PBimagen.Name = "PBimagen";
+            this.PBimagen.Size = new System.Drawing.Size(418, 298);
+            this.PBimagen.TabIndex = 3;
+            this.PBimagen.TabStop = false;
             // 
             // btnImportImage
             // 
@@ -69,32 +69,32 @@
             this.btnAgregoBanner.UseVisualStyleBackColor = true;
             this.btnAgregoBanner.Click += new System.EventHandler(this.btnAgregoBanner_Click);
             // 
-            // label1
+            // lblIdBanner
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "id Banner";
+            this.lblIdBanner.AutoSize = true;
+            this.lblIdBanner.Location = new System.Drawing.Point(39, 35);
+            this.lblIdBanner.Name = "lblIdBanner";
+            this.lblIdBanner.Size = new System.Drawing.Size(52, 13);
+            this.lblIdBanner.TabIndex = 5;
+            this.lblIdBanner.Text = "id Banner";
             // 
-            // label2
+            // lblLink
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Link";
+            this.lblLink.AutoSize = true;
+            this.lblLink.Location = new System.Drawing.Point(64, 75);
+            this.lblLink.Name = "lblLink";
+            this.lblLink.Size = new System.Drawing.Size(27, 13);
+            this.lblLink.TabIndex = 6;
+            this.lblLink.Text = "Link";
             // 
-            // label3
+            // lblTitNom
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Titulo o Nombre";
+            this.lblTitNom.AutoSize = true;
+            this.lblTitNom.Location = new System.Drawing.Point(9, 118);
+            this.lblTitNom.Name = "lblTitNom";
+            this.lblTitNom.Size = new System.Drawing.Size(82, 13);
+            this.lblTitNom.TabIndex = 7;
+            this.lblTitNom.Text = "Titulo o Nombre";
             // 
             // txtIdBanner
             // 
@@ -127,16 +127,16 @@
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtLink);
             this.Controls.Add(this.txtIdBanner);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitNom);
+            this.Controls.Add(this.lblLink);
+            this.Controls.Add(this.lblIdBanner);
             this.Controls.Add(this.btnAgregoBanner);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PBimagen);
             this.Controls.Add(this.btnImportImage);
             this.Name = "GestionDeBanners";
             this.Text = "GestionDeBanners";
             this.Load += new System.EventHandler(this.GestionDeBanners_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBimagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,12 +144,12 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PBimagen;
         private System.Windows.Forms.Button btnImportImage;
         private System.Windows.Forms.Button btnAgregoBanner;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIdBanner;
+        private System.Windows.Forms.Label lblLink;
+        private System.Windows.Forms.Label lblTitNom;
         private System.Windows.Forms.TextBox txtIdBanner;
         private System.Windows.Forms.TextBox txtLink;
         private System.Windows.Forms.TextBox txtTitulo;

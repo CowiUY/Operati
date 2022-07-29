@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 
 
 namespace Operati2
@@ -41,24 +32,25 @@ namespace Operati2
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
                 var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
-
+                int contador = 0;
                 if (usuarios != null)
                 {
-
-
                     foreach (var usuario in usuarios)
                     {
                         if (usuario.UserID == user && usuario.password == password && usuario.nivelPermiso == 3)
                         {
                             Igualdad = true;
+                            this.Visible = false;
+                            contador++;
+                            MessageBox.Show("Sesión iniciada correctamente como: "+usuario.UserID);
                         }
-
-
-
                     }
-
-
+                    if (contador == 0)
+                    {
+                        MessageBox.Show("Usuario Incorrecto");
+                    }
                 }
+                 
             }
             catch (Exception ex)
             {

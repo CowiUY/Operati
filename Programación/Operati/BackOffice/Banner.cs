@@ -1,4 +1,5 @@
-﻿namespace Operati2
+﻿
+namespace Operati2
 {
     class Banner
     {

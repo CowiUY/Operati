@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnRegis = new System.Windows.Forms.Button();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblNomUser = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
             this.txtMailusuario = new System.Windows.Forms.TextBox();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtContraUsuario = new System.Windows.Forms.TextBox();
             this.txtConfirmarContra = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblpConfiContra = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnRegis
             // 
-            this.button1.Location = new System.Drawing.Point(162, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Registrarse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegis.Location = new System.Drawing.Point(162, 216);
+            this.btnRegis.Name = "btnRegis";
+            this.btnRegis.Size = new System.Drawing.Size(75, 23);
+            this.btnRegis.TabIndex = 0;
+            this.btnRegis.Text = "Registrarse";
+            this.btnRegis.UseVisualStyleBackColor = true;
+            this.btnRegis.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // lblMail
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(35, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mail";
+            this.lblMail.AutoSize = true;
+            this.lblMail.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblMail.Location = new System.Drawing.Point(35, 26);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(26, 13);
+            this.lblMail.TabIndex = 1;
+            this.lblMail.Text = "Mail";
             // 
-            // label2
+            // lblNomUser
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(35, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre Usuario";
+            this.lblNomUser.AutoSize = true;
+            this.lblNomUser.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblNomUser.Location = new System.Drawing.Point(35, 65);
+            this.lblNomUser.Name = "lblNomUser";
+            this.lblNomUser.Size = new System.Drawing.Size(83, 13);
+            this.lblNomUser.TabIndex = 2;
+            this.lblNomUser.Text = "Nombre Usuario";
             // 
-            // label3
+            // lblContra
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(35, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Contraseña";
+            this.lblContra.AutoSize = true;
+            this.lblContra.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblContra.Location = new System.Drawing.Point(35, 111);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(61, 13);
+            this.lblContra.TabIndex = 3;
+            this.lblContra.Text = "Contraseña";
             // 
             // txtMailusuario
             // 
@@ -109,15 +109,15 @@
             this.txtConfirmarContra.TabIndex = 8;
             this.txtConfirmarContra.UseSystemPasswordChar = true;
             // 
-            // label4
+            // lblpConfiContra
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(35, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Confirmar Contraseña";
+            this.lblpConfiContra.AutoSize = true;
+            this.lblpConfiContra.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblpConfiContra.Location = new System.Drawing.Point(35, 149);
+            this.lblpConfiContra.Name = "lblpConfiContra";
+            this.lblpConfiContra.Size = new System.Drawing.Size(108, 13);
+            this.lblpConfiContra.TabIndex = 7;
+            this.lblpConfiContra.Text = "Confirmar Contraseña";
             // 
             // Registro
             // 
@@ -126,14 +126,14 @@
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(416, 290);
             this.Controls.Add(this.txtConfirmarContra);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblpConfiContra);
             this.Controls.Add(this.txtContraUsuario);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.txtMailusuario);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblContra);
+            this.Controls.Add(this.lblNomUser);
+            this.Controls.Add(this.lblMail);
+            this.Controls.Add(this.btnRegis);
             this.Name = "Registro";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);
@@ -144,14 +144,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRegis;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label lblNomUser;
+        private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.TextBox txtMailusuario;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtContraUsuario;
         private System.Windows.Forms.TextBox txtConfirmarContra;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblpConfiContra;
     }
 }

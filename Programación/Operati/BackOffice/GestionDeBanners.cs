@@ -27,7 +27,7 @@ namespace BackOffice
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     image = new Bitmap(open.FileName);
-                    pictureBox1.Image = image;
+                    PBimagen.Image = image;
                 }
 
             }

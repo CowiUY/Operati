@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtSeleccionePOP = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtMail = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
+            // txtSeleccionePOP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "SELECCIONE LA OPCION QUE DESEE";
+            this.txtSeleccionePOP.AutoSize = true;
+            this.txtSeleccionePOP.Location = new System.Drawing.Point(131, 259);
+            this.txtSeleccionePOP.Name = "txtSeleccionePOP";
+            this.txtSeleccionePOP.Size = new System.Drawing.Size(199, 13);
+            this.txtSeleccionePOP.TabIndex = 15;
+            this.txtSeleccionePOP.Text = "SELECCIONE LA OPCION QUE DESEE";
             // 
             // txtContraseña
             // 
@@ -56,23 +56,23 @@
             this.txtContraseña.TabIndex = 14;
             this.txtContraseña.Text = "Contraseña";
             // 
-            // label2
+            // lblMail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(287, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Mail";
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(287, 157);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(26, 13);
+            this.lblMail.TabIndex = 13;
+            this.lblMail.Text = "Mail";
             // 
-            // label1
+            // lblUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(287, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Usuario";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(287, 130);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 12;
+            this.lblUsuario.Text = "Usuario";
             // 
             // txtMail
             // 
@@ -81,12 +81,13 @@
             this.txtMail.Size = new System.Drawing.Size(100, 20);
             this.txtMail.TabIndex = 11;
             // 
-            // textBox2
+            // txtContra
             // 
-            this.textBox2.Location = new System.Drawing.Point(375, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtContra.Location = new System.Drawing.Point(375, 176);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
+            this.txtContra.Size = new System.Drawing.Size(100, 20);
+            this.txtContra.TabIndex = 10;
             // 
             // txtUsuario
             // 
@@ -110,12 +111,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtSeleccionePOP);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMail);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtMail);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnAgregarUsuario);
             this.Name = "GestionDeUsuarios";
@@ -128,12 +129,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtSeleccionePOP;
         private System.Windows.Forms.Label txtContraseña;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnAgregarUsuario;
     }

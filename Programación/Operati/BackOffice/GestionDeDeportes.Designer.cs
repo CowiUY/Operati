@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEquipo = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblDepor = new System.Windows.Forms.Label();
             this.txtNomEquipo = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtTipoDeporte = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
+            // lblEquipo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(257, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Equipo";
+            this.lblEquipo.AutoSize = true;
+            this.lblEquipo.Location = new System.Drawing.Point(257, 139);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(40, 13);
+            this.lblEquipo.TabIndex = 13;
+            this.lblEquipo.Text = "Equipo";
             // 
-            // label2
+            // lblCategoria
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Categoria";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(257, 177);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.TabIndex = 12;
+            this.lblCategoria.Text = "Categoria";
             // 
-            // label1
+            // lblDepor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Tipo de Deporte";
+            this.lblDepor.AutoSize = true;
+            this.lblDepor.Location = new System.Drawing.Point(257, 99);
+            this.lblDepor.Name = "lblDepor";
+            this.lblDepor.Size = new System.Drawing.Size(84, 13);
+            this.lblDepor.TabIndex = 11;
+            this.lblDepor.Text = "Tipo de Deporte";
             // 
             // txtNomEquipo
             // 
@@ -101,9 +101,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEquipo);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblDepor);
             this.Controls.Add(this.txtNomEquipo);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.txtTipoDeporte);
@@ -118,9 +118,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblDepor;
         private System.Windows.Forms.TextBox txtNomEquipo;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtTipoDeporte;

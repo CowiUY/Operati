@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblmail = new System.Windows.Forms.Label();
             this.TxtMail = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnRegisto = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNOCuenta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label2
+            // lblContraseña
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label2.Location = new System.Drawing.Point(39, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Contraseña";
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblContraseña.Location = new System.Drawing.Point(39, 104);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(61, 13);
+            this.lblContraseña.TabIndex = 9;
+            this.lblContraseña.Text = "Contraseña";
             // 
-            // label1
+            // lblUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label1.Location = new System.Drawing.Point(57, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Usuario";
+            this.lblUser.AutoSize = true;
+            this.lblUser.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblUser.Location = new System.Drawing.Point(57, 38);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(43, 13);
+            this.lblUser.TabIndex = 8;
+            this.lblUser.Text = "Usuario";
             // 
             // btnLogin
             // 
@@ -85,15 +85,15 @@
             this.txtUsuario.Size = new System.Drawing.Size(227, 20);
             this.txtUsuario.TabIndex = 5;
             // 
-            // label3
+            // lblmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label3.Location = new System.Drawing.Point(74, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Mail";
+            this.lblmail.AutoSize = true;
+            this.lblmail.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblmail.Location = new System.Drawing.Point(74, 72);
+            this.lblmail.Name = "lblmail";
+            this.lblmail.Size = new System.Drawing.Size(26, 13);
+            this.lblmail.TabIndex = 11;
+            this.lblmail.Text = "Mail";
             // 
             // TxtMail
             // 
@@ -122,16 +122,16 @@
             this.btnRegisto.UseVisualStyleBackColor = true;
             this.btnRegisto.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // lblNOCuenta
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(39, 203);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "¿No tienes cuenta?";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblNOCuenta.AutoSize = true;
+            this.lblNOCuenta.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNOCuenta.Location = new System.Drawing.Point(39, 203);
+            this.lblNOCuenta.Name = "lblNOCuenta";
+            this.lblNOCuenta.Size = new System.Drawing.Size(100, 13);
+            this.lblNOCuenta.TabIndex = 14;
+            this.lblNOCuenta.Text = "¿No tienes cuenta?";
+            this.lblNOCuenta.Click += new System.EventHandler(this.label4_Click);
             // 
             // Login
             // 
@@ -139,13 +139,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(432, 274);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblNOCuenta);
             this.Controls.Add(this.btnRegisto);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblmail);
             this.Controls.Add(this.TxtMail);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
@@ -159,15 +159,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblmail;
         private System.Windows.Forms.TextBox TxtMail;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnRegisto;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNOCuenta;
     }
 }

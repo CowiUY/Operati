@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnUser = new System.Windows.Forms.Button();
+            this.btnBanners = new System.Windows.Forms.Button();
+            this.btnDeportes = new System.Windows.Forms.Button();
             this.PnlGestion = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // btnUser
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 85);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Gestion de Usuarios";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnUser.Location = new System.Drawing.Point(12, 12);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(248, 85);
+            this.btnUser.TabIndex = 0;
+            this.btnUser.Text = "Gestion de Usuarios";
+            this.btnUser.UseVisualStyleBackColor = false;
+            this.btnUser.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnBanners
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.Location = new System.Drawing.Point(281, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(254, 85);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gestion de Banners";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBanners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBanners.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnBanners.Location = new System.Drawing.Point(281, 12);
+            this.btnBanners.Name = "btnBanners";
+            this.btnBanners.Size = new System.Drawing.Size(254, 85);
+            this.btnBanners.TabIndex = 1;
+            this.btnBanners.Text = "Gestion de Banners";
+            this.btnBanners.UseVisualStyleBackColor = false;
+            this.btnBanners.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnDeportes
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button3.Location = new System.Drawing.Point(551, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(237, 85);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Gestion de deportes";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDeportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnDeportes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnDeportes.Location = new System.Drawing.Point(551, 12);
+            this.btnDeportes.Name = "btnDeportes";
+            this.btnDeportes.Size = new System.Drawing.Size(237, 85);
+            this.btnDeportes.TabIndex = 2;
+            this.btnDeportes.Text = "Gestion de deportes";
+            this.btnDeportes.UseVisualStyleBackColor = false;
+            this.btnDeportes.Click += new System.EventHandler(this.button3_Click);
             // 
             // PnlGestion
             // 
@@ -85,9 +85,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(8)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.PnlGestion);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeportes);
+            this.Controls.Add(this.btnBanners);
+            this.Controls.Add(this.btnUser);
             this.Name = "BOForm";
             this.Text = "BackOffice";
             this.Load += new System.EventHandler(this.BOForm_Load);
@@ -97,9 +97,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Button btnBanners;
+        private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Panel PnlGestion;
     }
 }

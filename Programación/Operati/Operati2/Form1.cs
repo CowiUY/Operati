@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Operati2
 {
-    public partial class Form1 : Form
+    public partial class Frmuno : Form
     {
-        public Form1()
+        public Frmuno()
         {
             InitializeComponent();
         }
