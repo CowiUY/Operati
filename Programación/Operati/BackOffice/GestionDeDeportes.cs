@@ -54,5 +54,15 @@ namespace BackOffice
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Operati2;
+
+
+
+
 namespace BackOffice
 {
     public partial class GestionDeBanners : Form
@@ -98,6 +102,12 @@ namespace BackOffice
         private void txtLink_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form apibanner = new APIPublicidad();
+            apibanner.Show();
         }
     }
 }

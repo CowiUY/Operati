@@ -37,6 +37,7 @@
             this.txtIdBanner = new System.Windows.Forms.TextBox();
             this.txtLink = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBimagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,12 +119,23 @@
             this.txtTitulo.Size = new System.Drawing.Size(155, 20);
             this.txtTitulo.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(127, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GestionDeBanners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtLink);
             this.Controls.Add(this.txtIdBanner);
@@ -134,7 +146,7 @@
             this.Controls.Add(this.PBimagen);
             this.Controls.Add(this.btnImportImage);
             this.Name = "GestionDeBanners";
-            this.Text = "GestionDeBanners";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.GestionDeBanners_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBimagen)).EndInit();
             this.ResumeLayout(false);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.TextBox txtIdBanner;
         private System.Windows.Forms.TextBox txtLink;
         private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.Button button1;
     }
 }

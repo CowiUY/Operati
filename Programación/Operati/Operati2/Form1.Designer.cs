@@ -177,6 +177,7 @@
             this.Banner.Size = new System.Drawing.Size(150, 392);
             this.Banner.TabIndex = 23;
             this.Banner.TabStop = false;
+            this.Banner.Click += new System.EventHandler(this.Banner_Click);
             // 
             // Banner2
             // 
@@ -185,6 +186,7 @@
             this.Banner2.Size = new System.Drawing.Size(150, 392);
             this.Banner2.TabIndex = 24;
             this.Banner2.TabStop = false;
+            this.Banner2.Click += new System.EventHandler(this.Banner2_Click);
             // 
             // Frmuno
             // 

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Operati2
 {
@@ -37,6 +39,16 @@ namespace Operati2
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Banner_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Banner2_Click(object sender, EventArgs e)
         {
 
         }

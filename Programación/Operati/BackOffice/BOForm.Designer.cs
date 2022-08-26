@@ -31,7 +31,6 @@
             this.btnUser = new System.Windows.Forms.Button();
             this.btnBanners = new System.Windows.Forms.Button();
             this.btnDeportes = new System.Windows.Forms.Button();
-            this.PnlGestion = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnUser
@@ -70,21 +69,12 @@
             this.btnDeportes.UseVisualStyleBackColor = false;
             this.btnDeportes.Click += new System.EventHandler(this.button3_Click);
             // 
-            // PnlGestion
-            // 
-            this.PnlGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(8)))), ((int)(((byte)(21)))));
-            this.PnlGestion.Location = new System.Drawing.Point(12, 103);
-            this.PnlGestion.Name = "PnlGestion";
-            this.PnlGestion.Size = new System.Drawing.Size(776, 343);
-            this.PnlGestion.TabIndex = 3;
-            // 
             // BOForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(8)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PnlGestion);
             this.Controls.Add(this.btnDeportes);
             this.Controls.Add(this.btnBanners);
             this.Controls.Add(this.btnUser);
@@ -100,7 +90,6 @@
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnBanners;
         private System.Windows.Forms.Button btnDeportes;
-        private System.Windows.Forms.Panel PnlGestion;
     }
 }
 

@@ -35,12 +35,13 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtTipoDeporte = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminarDeporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEquipo
             // 
             this.lblEquipo.AutoSize = true;
-            this.lblEquipo.Location = new System.Drawing.Point(257, 139);
+            this.lblEquipo.Location = new System.Drawing.Point(247, 92);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(40, 13);
             this.lblEquipo.TabIndex = 13;
@@ -49,7 +50,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(257, 177);
+            this.lblCategoria.Location = new System.Drawing.Point(247, 130);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 12;
@@ -58,7 +59,7 @@
             // lblDepor
             // 
             this.lblDepor.AutoSize = true;
-            this.lblDepor.Location = new System.Drawing.Point(257, 99);
+            this.lblDepor.Location = new System.Drawing.Point(247, 52);
             this.lblDepor.Name = "lblDepor";
             this.lblDepor.Size = new System.Drawing.Size(84, 13);
             this.lblDepor.TabIndex = 11;
@@ -66,21 +67,22 @@
             // 
             // txtNomEquipo
             // 
-            this.txtNomEquipo.Location = new System.Drawing.Point(364, 132);
+            this.txtNomEquipo.Location = new System.Drawing.Point(354, 85);
             this.txtNomEquipo.Name = "txtNomEquipo";
             this.txtNomEquipo.Size = new System.Drawing.Size(100, 20);
             this.txtNomEquipo.TabIndex = 10;
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(364, 174);
+            this.txtCategoria.Location = new System.Drawing.Point(354, 127);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(100, 20);
             this.txtCategoria.TabIndex = 9;
+            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // txtTipoDeporte
             // 
-            this.txtTipoDeporte.Location = new System.Drawing.Point(364, 96);
+            this.txtTipoDeporte.Location = new System.Drawing.Point(354, 49);
             this.txtTipoDeporte.Name = "txtTipoDeporte";
             this.txtTipoDeporte.Size = new System.Drawing.Size(100, 20);
             this.txtTipoDeporte.TabIndex = 8;
@@ -88,7 +90,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(339, 239);
+            this.btnAgregar.Location = new System.Drawing.Point(184, 237);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(125, 33);
             this.btnAgregar.TabIndex = 7;
@@ -96,11 +98,21 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnEliminarDeporte
+            // 
+            this.btnEliminarDeporte.Location = new System.Drawing.Point(418, 237);
+            this.btnEliminarDeporte.Name = "btnEliminarDeporte";
+            this.btnEliminarDeporte.Size = new System.Drawing.Size(125, 33);
+            this.btnEliminarDeporte.TabIndex = 14;
+            this.btnEliminarDeporte.Text = "Eliminar Deporte";
+            this.btnEliminarDeporte.UseVisualStyleBackColor = true;
+            // 
             // GestionDeDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminarDeporte);
             this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblDepor);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.TextBox txtTipoDeporte;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEliminarDeporte;
     }
 }
