@@ -27,7 +27,7 @@ namespace BackOffice
             Initialize();
         }
 
-        //Initialize values
+        //inicializar valores
         private void Initialize()
         {
             server = "localhost";
@@ -51,25 +51,25 @@ namespace BackOffice
             }
             catch (MySqlException ex)
             {
-                //When handling errors, you can your application's response based on the error number.
-                //The two most common error numbers when connecting are as follows:
+                //si se tiene errores,hacemos que la app responda a base de estos errores.
+                //numeros de error cuando te conectas al server:
                 //0: Cannot connect to server.
                 //1045: Invalid user name and/or password.
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("NO se puede conectar al server , contacte al administrador");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        MessageBox.Show("usuario o contraseña invalidos , por favor intente de nuevo");
                         break;
                 }
                 return false;
             }
         }
 
-        //Close connection
+        //Cierra conexion
         private bool CloseConnection()
         {
             try
@@ -84,7 +84,7 @@ namespace BackOffice
             }
         }
 
-        //Insert statement
+        //Inserta la declaracion
         public void Insert()
         {
             string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
@@ -103,7 +103,7 @@ namespace BackOffice
             }
         }
 
-        //Actualiza objeto
+        //Actualiza declaracion
         public void Update()
         {
             string query = "UPDATE tableinfo SET name=' alfonso ', age='22' WHERE name='pepe'";
@@ -181,22 +181,21 @@ namespace BackOffice
             }
         }
 
-        //Count statement
+        //Contar
         public int Count()
         {
             string query = "SELECT Count(*) FROM tableinfo";
             int Count = -1;
 
-            //Open Connection
+       
             if (this.OpenConnection() == true)
             {
-                //Create Mysql Command
+              
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                //ExecuteScalar will return one value
                 Count = int.Parse(cmd.ExecuteScalar() + "");
 
-                //close Connection
+              
                 this.CloseConnection();
 
                 return Count;
@@ -207,7 +206,7 @@ namespace BackOffice
             }
         }
 
-        //Backup
+        //Respaldo
         public void Backup()
         {
             try
@@ -221,7 +220,7 @@ namespace BackOffice
                 int second = Time.Second;
                 int millisecond = Time.Millisecond;
 
-                //Save file to C:\ with the current date as a filename
+                //guarda el archivo a C:\ con la fecha como nombre
                 string path;
                 path = "C:\\" + year + "-" + month + "-" + day + "-" + hour + "-" + minute + "-" + second + "-" + millisecond + ".sql";
                 StreamWriter file = new StreamWriter(path);
@@ -249,12 +248,12 @@ namespace BackOffice
             }
         }
 
-        //Restore
+        //Restaurar
         public void Restore()
         {
             try
             {
-                //Read file from C:\
+                //Lee el archivo de C:\
                 string path;
                 path = "C:\\MySqlBackup.sql";
                 StreamReader file = new StreamReader(path);

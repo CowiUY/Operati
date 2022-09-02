@@ -84,11 +84,11 @@
   <ItemGroup>
     <Compile Include="Banner.cs" />
     <Compile Include="Deporte.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmPincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmPincipal.Designer.cs">
+      <DependentUpon>FrmPincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica.cs" />
     <Compile Include="Login.cs">
@@ -106,8 +106,8 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPincipal.resx">
+      <DependentUpon>FrmPincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -49,6 +49,7 @@
             this.PBimagen.Size = new System.Drawing.Size(418, 298);
             this.PBimagen.TabIndex = 3;
             this.PBimagen.TabStop = false;
+            this.PBimagen.Click += new System.EventHandler(this.PBimagen_Click);
             // 
             // btnImportImage
             // 

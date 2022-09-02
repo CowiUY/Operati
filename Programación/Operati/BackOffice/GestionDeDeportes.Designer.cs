@@ -106,6 +106,7 @@
             this.btnEliminarDeporte.TabIndex = 14;
             this.btnEliminarDeporte.Text = "Eliminar Deporte";
             this.btnEliminarDeporte.UseVisualStyleBackColor = true;
+            this.btnEliminarDeporte.Click += new System.EventHandler(this.btnEliminarDeporte_Click);
             // 
             // GestionDeDeportes
             // 

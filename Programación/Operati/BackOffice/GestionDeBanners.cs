@@ -109,5 +109,10 @@ namespace BackOffice
             Form apibanner = new APIPublicidad();
             apibanner.Show();
         }
+
+        private void PBimagen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

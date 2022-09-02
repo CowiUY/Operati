@@ -64,5 +64,10 @@ namespace BackOffice
         {
 
         }
+
+        private void btnEliminarDeporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

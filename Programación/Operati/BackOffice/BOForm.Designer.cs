@@ -35,11 +35,12 @@
             // 
             // btnUser
             // 
+            this.btnUser.AutoSize = true;
             this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUser.Location = new System.Drawing.Point(12, 12);
+            this.btnUser.Location = new System.Drawing.Point(110, 161);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(248, 85);
+            this.btnUser.Size = new System.Drawing.Size(172, 83);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "Gestion de Usuarios";
             this.btnUser.UseVisualStyleBackColor = false;
@@ -47,11 +48,12 @@
             // 
             // btnBanners
             // 
+            this.btnBanners.AutoSize = true;
             this.btnBanners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnBanners.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBanners.Location = new System.Drawing.Point(281, 12);
+            this.btnBanners.Location = new System.Drawing.Point(303, 161);
             this.btnBanners.Name = "btnBanners";
-            this.btnBanners.Size = new System.Drawing.Size(254, 85);
+            this.btnBanners.Size = new System.Drawing.Size(170, 83);
             this.btnBanners.TabIndex = 1;
             this.btnBanners.Text = "Gestion de Banners";
             this.btnBanners.UseVisualStyleBackColor = false;
@@ -59,11 +61,12 @@
             // 
             // btnDeportes
             // 
+            this.btnDeportes.AutoSize = true;
             this.btnDeportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDeportes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDeportes.Location = new System.Drawing.Point(551, 12);
+            this.btnDeportes.Location = new System.Drawing.Point(503, 161);
             this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(237, 85);
+            this.btnDeportes.Size = new System.Drawing.Size(172, 83);
             this.btnDeportes.TabIndex = 2;
             this.btnDeportes.Text = "Gestion de deportes";
             this.btnDeportes.UseVisualStyleBackColor = false;
@@ -82,6 +85,7 @@
             this.Text = "BackOffice";
             this.Load += new System.EventHandler(this.BOForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
