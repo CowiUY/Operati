@@ -1,9 +1,0 @@
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\bin\Release\Operati2.exe.config
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\bin\Release\Operati2.exe
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\bin\Release\Operati2.pdb
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.csprojAssemblyReference.cache
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.Properties.Resources.resources
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.csproj.GenerateResource.cache
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.csproj.CoreCompileInputs.cache
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.exe
-C:\Users\Sebastian Santos\source\repos\Operati2\Operati2\obj\Release\Operati2.pdb
