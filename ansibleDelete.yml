@@ -1,0 +1,60 @@
+---
+    - name: Delete Software on CENTOS
+      hosts: all
+      become: yes
+      tasks:
+        - name: Delete OpenSSH
+          yum:
+            name: openssh-server
+            state: absent
+            autoremove: true
+    
+        #       DELETED
+        #- name: Make sure OpenSSH is running
+        #  service:
+        #    name: sshd
+    
+        - name: Delete httpd
+          action: yum name=httpd state=absent autoremove=true
+    
+        #       DELETED
+        #- name: Enable Apache on system reboot
+        #  service: name=httpd enabled=yes
+    
+        #- name: Start service httpd, if not started
+        #  service:
+        #    name: httpd
+        #    state: started
+        
+        - name: delete firewalld
+          action: yum name=firewalld state=absent autoremove=true
+        
+        #       DELETED
+        #- name: Enable firewalld on system reboot
+        #  service: name=firewalld enabled=yes
+        
+        #       DELETED
+        #- name: Start service firewalld, if not started
+        #  service:
+        #    name: firewalld
+        #    state: started
+            
+    #    - firewalld:
+    #      service: "{{ item }}"
+    #      permanent: yes
+    #      state: enabled
+    #      with_items:
+    #       - ssh
+    #       - http
+    #       - https
+    #       - sql
+    
+        #       DELETED
+        #- name: Restart service firewalld
+        #  service:
+        #    name: firewalld
+        #    state: restarted
+    
+    # Para borrar:
+    #    state: absent
+    #      autoremove: true

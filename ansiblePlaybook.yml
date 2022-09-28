@@ -1,0 +1,56 @@
+---
+- name: Check for Software on CENTOS
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install OpenSSH
+      yum:
+        name: openssh-server
+        state: installed
+
+    - name: Make sure OpenSSH is running
+      service:
+        name: sshd
+        state: started
+
+    - name: install httpd
+      action: yum name=httpd state=installed
+
+    - name: Enable Apache on system reboot
+      service: name=httpd enabled=yes
+
+    - name: Start service httpd, if not started
+      service:
+        name: httpd
+        state: started
+    
+    - name: install firewalld
+      action: yum name=firewalld state=installed
+    
+    - name: Enable firewalld on system reboot
+      service: name=firewalld enabled=yes
+    
+    - name: Start service firewalld, if not started
+      service:
+        name: firewalld
+        state: started
+        
+    - name: Open ports on Firewall
+      firewalld:
+        port: "{{item.port}}/{{item.proto}}"
+        permanent: yes
+        state: enabled
+      with_items:
+        - {port: "80", proto: "tcp"}
+        - {port: "443", proto: "tcp"}
+        - {port: "22", proto: "tcp"}
+        - {port: "1433", proto: "tcp"}
+
+    - name: Restart service firewalld
+      service:
+        name: firewalld
+        state: restarted
+
+# Para borrar:
+#    state: absent
+#      autoremove: true
