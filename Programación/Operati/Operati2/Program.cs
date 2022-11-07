@@ -8,6 +8,31 @@ namespace Operati2
 {
     static class Program
     {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////////////////////////////////////////////////////
+        
+        public static ADODB.Connection conexion = new ADODB.Connection();
+
+        //////////////////////////////////////////////////////////////////
+
+
+
+
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

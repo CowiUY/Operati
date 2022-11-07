@@ -75,6 +75,7 @@
             this.btnMotor.TabIndex = 4;
             this.btnMotor.Text = "MOTOR";
             this.btnMotor.UseWaitCursor = true;
+            this.btnMotor.SelectedIndexChanged += new System.EventHandler(this.btnMotor_SelectedIndexChanged);
             // 
             // btnBasket
             // 
@@ -95,6 +96,7 @@
             this.btnPoli.TabIndex = 3;
             this.btnPoli.Text = "POLIDEPORTIVO";
             this.btnPoli.UseWaitCursor = true;
+            this.btnPoli.SelectedIndexChanged += new System.EventHandler(this.btnPoli_SelectedIndexChanged);
             // 
             // btnFubtol
             // 

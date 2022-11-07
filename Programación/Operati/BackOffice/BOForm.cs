@@ -41,5 +41,10 @@ namespace BackOffice
             Form formDepo = new GestionDeDeportes();
             formDepo.Show();
         }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            Form formEventos = new 
+        }
     }
 }

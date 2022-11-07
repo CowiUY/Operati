@@ -62,5 +62,15 @@ namespace Operati2
 
 
         }
+
+        private void btnPoli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMotor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
