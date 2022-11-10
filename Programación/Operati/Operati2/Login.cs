@@ -28,24 +28,29 @@ namespace Operati2
         {
             try
             {
-                bool match = false;
+                bool Igualdad = false;
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
-            
-            
-                if (EsEmail(user))
+                var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\Usuarios.json"));
+                int contador = 0;
+                if (usuarios != null)
                 {
-                    if (Logica.CheckSiExiste("Usuarios", "Email", user) == 1) {
-
-                        var o = Logica.GetJson
-
-
+                    foreach (var usuario in usuarios)
+                    {
+                        if (usuario.UserID == user && usuario.password == password && usuario.nivelPermiso == 3)
+                        {
+                            Igualdad = true;
+                            this.Visible = false;
+                            contador++;
+                            MessageBox.Show("Sesión iniciada correctamente como: " + usuario.UserID);
+                        }
                     }
-
-
-                    
+                    if (contador == 0)
+                    {
+                        MessageBox.Show("Usuario Incorrecto");
+                    }
                 }
-                 
+
             }
             catch (Exception ex)
             {

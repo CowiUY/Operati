@@ -4,7 +4,7 @@ namespace BackOffice
     public class Usuario
     {
 
-        public string UserID { get; set; }
+        public int ID_Usuario { get; set; }
 
         public string Nom_Usuario { get; set; }
 

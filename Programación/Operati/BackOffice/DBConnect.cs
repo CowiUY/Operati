@@ -41,12 +41,12 @@ namespace BackOffice
         {
             try
             {
-                server = "localhost";
-                database = "connectcsharptomysql";
-                uid = "username";
-                password = "password";
+                server = "192.168.5.50";
+                database = "gabriel_moreira";
+                uid = "gabriel.moreira";
+                password = "54748096";
                 string connectionString;
-                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "Pwd=" + password + ";";
 
                 connection = new MySqlConnection(connectionString);
             }
@@ -350,6 +350,7 @@ namespace BackOffice
 
                     Usuario usuario = new Usuario();
 
+                    usuario.ID_Usuario = Convert.ToInt16($"{dataReader.GetString("ID_Usuario")}");
 
 
                     usuario.Mail = $"{dataReader.GetString("Mail")}";
@@ -364,6 +365,11 @@ namespace BackOffice
 
                 }
 
+                dataReader.Close();
+                CloseConnection();
+
+                return usuarios;
+
 
             }
             else {
@@ -375,8 +381,7 @@ namespace BackOffice
 
             }
 
-        }
-
+        } //hecho
 
         public List<Equipo> SelectEquipos(string query) {
 
@@ -411,7 +416,7 @@ namespace BackOffice
                     CloseConnection();
 
 
-
+                    return equipos;
 
 
                 }
@@ -428,10 +433,8 @@ namespace BackOffice
             } catch { return equipos; }
 
 
-        }
-
-
-
+        }  // hecho
+        
         public List<Banner> SelectBanner(string query) {
 
             List<Banner> banners = new List<Banner>();
@@ -475,6 +478,8 @@ namespace BackOffice
 
                 dataReader.Close();
                 CloseConnection();
+
+                return banners;
             }
             else {
 
@@ -484,9 +489,7 @@ namespace BackOffice
 
             }
         }       // hecho
-
-
-
+        
         public List<Evento> SelectEventos(string query)
         {
 

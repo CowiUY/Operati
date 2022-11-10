@@ -29,7 +29,7 @@ namespace BackOffice
             Usuario newUser = new Usuario
 
             {
-                UserID = txtUsuario.Text,
+                ID_Usuario = txtUsuario.Text,
                 Mail = txtMail.Text,
                 password = txtContraseña.Text,
                 nivelPermiso = 1

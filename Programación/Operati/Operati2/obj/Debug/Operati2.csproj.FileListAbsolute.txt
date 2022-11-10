@@ -533,3 +533,13 @@ C:\Users\Sebastian Santos\GitProyecto\Operati\Programación\Operati\Operati2\bin
 C:\Users\Sebastian Santos\GitProyecto\Operati\Programación\Operati\Operati2\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Sebastian Santos\GitProyecto\Operati\Programación\Operati\Operati2\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Sebastian Santos\GitProyecto\Operati\Programación\Operati\Operati2\bin\Debug\MySql.Data.xml
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.csprojAssemblyReference.cache
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.exe.config
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.Frmuno.resources
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.Login.resources
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.Properties.Resources.resources
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.Registro.resources
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.csproj.GenerateResource.cache
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.csproj.CoreCompileInputs.cache
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.exe
+C:\Users\alumno\Desktop\operati\Programación\Operati\Operati2\obj\Debug\Operati2.pdb

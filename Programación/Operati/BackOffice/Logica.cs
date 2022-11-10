@@ -112,7 +112,7 @@ namespace BackOffice
         }
 
         //para terminar 
-        public static List<Usuario> GetUsuarios(int a, string constraint)
+        public static List<Usuario> GetUsuarios(int a, string constraint, string constraint2, string constraint3)
         {
 
 
@@ -129,13 +129,13 @@ namespace BackOffice
                     break;
 
                 case 2:
-
-                    usuarios = cbd.SelectUsuarios("");  
+                                                                                                                                                                
+                    usuarios = cbd.SelectUsuarios($"SELECT * FROM Usuario WHERE Mail = '{constraint}' AND Nom_Usuario = '{constraint2}' AND Contraseña = '{constraint3}'");  
 
                         break;
 
 
-            }
+            }return usuarios;
 
         }
 
