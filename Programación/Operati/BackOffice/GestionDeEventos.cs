@@ -33,7 +33,7 @@ namespace BackOffice
 
             if (evento.conexion.State == 0)
             {
-                MessageBox.Show("coneccion cerrada");
+                MessageBox.Show("conexion cerrada");
                 return;
             }
             else
@@ -69,7 +69,7 @@ namespace BackOffice
                     if (respuesta == DialogResult.Yes)
                     {
                         btnAgregar.Visible = true;
-                        txtNombre.Text = txtBuscarNombre.Text;
+                        txtNombreEncuentro.Text = txtBuscarNombre.Text;
                         txtBuscarNombre.Clear();
 
                     }
@@ -93,6 +93,53 @@ namespace BackOffice
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void crearEvento(bool alta){
+
+
+            Evento nuevoEvento = new Evento();
+            nuevoEvento.nombre = txtNombreEncuentro.Text;
+            nuevoEvento.pais = txtPais.Text;
+            nuevoEvento.inicio = "false";
+            nuevoEvento.final = "false";
+            nuevoEvento.resultado = txtResultado.Text;
+            if (!alta)
+            {
+                nuevoEvento.id = Convert.ToInt32(txtID.Text);
+
+            }
+            else
+            {
+
+            }
+            nuevoEvento.Guardar(alta);
+            LimpiarTextS();
+
+        }
+
+
+        private void LimpiarTtxS()
+        {
+            txtID.Clear();
+            txtNombreEncuentro.Clear();
+            txtPais.Clear();
+            //  txtFecha.Clear();
+            //txtHora.Clear();
+            txtResultado.Clear();
+
+
+        }
+
+        private void dtpFechaCrear_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFecha1_ValueChanged(object sender, EventArgs e)
         {
 
         }

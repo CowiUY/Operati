@@ -30,7 +30,7 @@ namespace BackOffice
 
             {
                 UserID = txtUsuario.Text,
-                mail = txtMail.Text,
+                Mail = txtMail.Text,
                 password = txtContraseña.Text,
                 nivelPermiso = 1
             };

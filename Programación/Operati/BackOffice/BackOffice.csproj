@@ -91,8 +91,13 @@
     <Compile Include="BOForm.Designer.cs">
       <DependentUpon>BOForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categoria.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Deporte.cs" />
+    <Compile Include="Deportista.cs" />
+    <Compile Include="Encuentro.cs" />
+    <Compile Include="Equipo.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="GestionDeBanners.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +109,12 @@
     </Compile>
     <Compile Include="GestionDeDeportes.Designer.cs">
       <DependentUpon>GestionDeDeportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDeEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDeEquipo.Designer.cs">
+      <DependentUpon>GestionDeEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionDeEventos.cs">
       <SubType>Form</SubType>
@@ -135,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDeDeportes.resx">
       <DependentUpon>GestionDeDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDeEquipo.resx">
+      <DependentUpon>GestionDeEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDeEventos.resx">
       <DependentUpon>GestionDeEventos.cs</DependentUpon>
@@ -174,6 +188,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

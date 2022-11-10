@@ -15,11 +15,25 @@ namespace BackOffice
         public GestionDeDeportes()
         {
             InitializeComponent();
+           
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Deporte newDeporte = new Deporte
+            
+                
+
+
+
+
+
+
+
+
+
+
+            // metodo con json :
+            /*Deporte newDeporte = new Deporte
             {
                 Categoria = txtCategoria.Text,
                 IdDeporte = txtTipoDeporte.Text,
@@ -41,7 +55,7 @@ namespace BackOffice
                 List<Deporte> Depo = new List<Deporte>();
                 Logica.SerializeDeportes(Depo);
 
-            }
+            }*/
         }
         
 
@@ -65,9 +79,39 @@ namespace BackOffice
 
         }
 
-        private void btnEliminarDeporte_Click(object sender, EventArgs e)
+        private void btnEliminarDeporte_Click(object sender, EventArgs e, int id, Panel p)
+        {
+            DialogResult dialogResultA = MessageBox.Show("¿Seguro desea borrar el deporte?", "" , MessageBoxButtons.YesNo);
+
+                if (dialogResultA == DialogResult.Yes)
+                {
+
+                   try {
+
+
+
+                              Logica.Borrar("Deporte", "Nom_Deporte", id + "");
+                              p.Dispose();
+                              MessageBox.Show("Deporte Borrado Correctamente");
+
+
+
+                   } catch { }
+
+                    
+
+
+
+
+
+
+                }
+            }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
+    }
     }
 }

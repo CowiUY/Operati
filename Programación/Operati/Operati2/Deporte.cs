@@ -1,6 +1,6 @@
 ﻿namespace Operati2
 {
-    class Deporte
+    public class Deporte
     {
         public string IdDeporte { get; set; }
 

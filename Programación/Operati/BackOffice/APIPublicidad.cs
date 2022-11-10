@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BackOffice
 {
     public partial class APIPublicidad : Form
     {
         String link = "";
         String imgPath = "";
-        Random a = new Random();
+        Random r = new Random();
 
         int b = 0;
 
@@ -27,10 +28,6 @@ namespace BackOffice
             SetBanner();
         }
 
-        private void APIPublicidad_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void IMGdelBanner_Click(object sender, EventArgs e)
         {
@@ -50,7 +47,45 @@ namespace BackOffice
         private void SetBanner()
         {
 
-            var banners = Logica.DeserializeBanners(Logica.GetJson("SerialJson\\Banners.json"));
+            try
+            {
+                var banners = Logica.GetBanner(1, null);
+
+                int i = r.Next(banners.Count());
+
+
+                var banner = banners[i];
+
+                link = banner.Link_Banner;
+
+                imgPath = banner.Imagen_Banner;
+
+                IMGdelBanner.Image = new Bitmap(imgPath);
+
+
+
+
+
+
+
+
+
+            }
+            catch {}
+
+
+
+
+
+
+
+
+
+
+
+            //metodo de json:
+            
+           /* var banners = Logica.DeserializeBanners(Logica.GetJson("SerialJson\\Banners.json"));
 
 
             foreach (var banner in banners)
@@ -65,19 +100,24 @@ namespace BackOffice
                 if (banner.IdBanner == i)
                 {
 
-                    link = banner.Link;
-                    imgPath = banner.Imagen;
+                    link = banner.Link_Banner;
+                    imgPath = banner.Imagen_Banner;
 
                 }
             }
 
 
-            pictureBox1.Image = Image.FromFile(imgPath);
+            pictureBox1.Image = Image.FromFile(imgPath);*/
 
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void APIPublicidad_Load(object sender, EventArgs e)
         {
 
         }

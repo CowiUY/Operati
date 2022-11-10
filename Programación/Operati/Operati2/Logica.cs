@@ -11,6 +11,7 @@ namespace Operati2
 {
     class Logica
     {
+      
         //serializacion//
 
         public static void SerializeUsuarios(List<Usuario> usuarios, string path = "SerialJson\\Usuarios.json")
@@ -45,7 +46,6 @@ namespace Operati2
 
         }
 
-
         public static List<Usuario> DeserializeUsuarios(String jsonFile)
         {
 
@@ -61,10 +61,20 @@ namespace Operati2
             return deportes;
 
         }
+
         public static void DeserializeFile(String jsonFile) {
 
             var file = JsonSerializer.Deserialize<String[]>(jsonFile);
 
         }
+
+
+       
+        
+
+
+       
+
+
     }
 }

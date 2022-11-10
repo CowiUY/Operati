@@ -6,9 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BackOffice;
 
-//Add MySql Library
+
+//Añadir MySql Library
 using MySql.Data.MySqlClient;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// '''''''''''''''''''''''''''''''''''
+
 
 
 namespace BackOffice
@@ -21,23 +27,33 @@ namespace BackOffice
         private string uid;
         private string password;
 
+       
+
         //Constructor
         public DBConnect()
         {
-            Initialize();
+           
+            InitializeDB();
         }
 
         //inicializar valores
-        private void Initialize()
+        private void InitializeDB()
         {
-            server = "localhost";
-            database = "connectcsharptomysql";
-            uid = "username";
-            password = "password";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            try
+            {
+                server = "localhost";
+                database = "connectcsharptomysql";
+                uid = "username";
+                password = "password";
+                string connectionString;
+                connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            connection = new MySqlConnection(connectionString);
+                connection = new MySqlConnection(connectionString);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -87,15 +103,15 @@ namespace BackOffice
         //Inserta la declaracion
         public void Insert()
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            string query = "INSERT INTO tableinfo (name, age) VALUES('Pepe', '20')";
 
-            //open connection
+            //Abrimos conexion
             if (this.OpenConnection() == true)
             {
-                //create command and assign the query and connection from the constructor
+                //crea el comando y asigna cola y la conexion del constructor
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                //Execute command
+                //Ejecuta comando
                 cmd.ExecuteNonQuery();
 
                 //close connection
@@ -144,7 +160,7 @@ namespace BackOffice
         {
             string query = "SELECT * FROM tableinfo";
 
-            //Create a list to store the result
+            //crea una lsita para guardar el resultado
             List<string>[] list = new List<string>[3];
             list[0] = new List<string>();
             list[1] = new List<string>();
@@ -162,8 +178,8 @@ namespace BackOffice
                 while (dataReader.Read())
                 {
                     list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    list[1].Add(dataReader["nombre"] + "");
+                    list[2].Add(dataReader["edad"] + "");
                 }
 
                 //cierra el datareader
@@ -187,15 +203,15 @@ namespace BackOffice
             string query = "SELECT Count(*) FROM tableinfo";
             int Count = -1;
 
-       
+
             if (this.OpenConnection() == true)
             {
-              
+
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 Count = int.Parse(cmd.ExecuteScalar() + "");
 
-              
+
                 this.CloseConnection();
 
                 return Count;
@@ -244,8 +260,45 @@ namespace BackOffice
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to backup!");
+                MessageBox.Show("ERROR, no se puede hacer backup!");
             }
+        }
+
+        // checkea si existe
+        public int CheckSiExiste(string query)
+        {
+
+            int resultado = 1;
+
+            try {
+                if (OpenConnection() == true)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    resultado = Convert.ToInt32((Int64)cmd.ExecuteScalar());
+
+                    CloseConnection();
+                    return resultado;
+
+
+                }
+                else {
+
+                    CloseConnection();
+                    return resultado;
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                CloseConnection();
+                return 1;
+            }
+
         }
 
         //Restaurar
@@ -277,9 +330,493 @@ namespace BackOffice
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to Restore!");
+                MessageBox.Show("ERROR, no se puede restaurar!");
             }
         }
+
+
+        public List<Usuario> SelectUsuarios(string query){
+
+            List<Usuario> usuarios = new List<Usuario>();
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Usuario usuario = new Usuario();
+
+
+
+                    usuario.Mail = $"{dataReader.GetString("Mail")}";
+
+                    usuario.Nom_Usuario = $"{dataReader.GetString("Nom_Usuario")}";
+
+                    usuario.password = $"{dataReader.GetString("Contrasena")}";
+
+                    usuario.nivelPermiso = Convert.ToInt16($"{dataReader.GetString("nivelPermiso")}");
+
+                    usuarios.Add(usuario);
+
+                }
+
+
+            }
+            else {
+                CloseConnection();
+                return usuarios;
+
+
+
+
+            }
+
+        }
+
+
+        public List<Equipo> SelectEquipos(string query) {
+
+            List<Equipo> equipos = new List<Equipo>();
+
+            try {
+
+
+                if (OpenConnection() == true) {
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read()) {
+
+
+                        Equipo equipo = new Equipo();
+
+                        equipo.ID_Equipo = Convert.ToInt16($"{dataReader.GetString("ID_Equipo")}");
+
+                        equipo.Nom_Equipo = $"{dataReader.GetString("Nom_Equipo") }";
+
+                        equipo.Pais_Origen = $"{dataReader.GetString("Pais_Origen")}";
+
+
+                        equipos.Add(equipo);
+
+
+                    }
+
+                    dataReader.Close();
+                    CloseConnection();
+
+
+
+
+
+                }
+                else {
+
+
+                    CloseConnection();
+                    return equipos;
+
+                }
+
+
+
+            } catch { return equipos; }
+
+
+        }
+
+
+
+        public List<Banner> SelectBanner(string query) {
+
+            List<Banner> banners = new List<Banner>();
+
+
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Banner banner = new Banner();
+
+                    try {
+
+
+                        banner.ID_Banner = Convert.ToInt32($"{dataReader.GetString("IdPublicidad")}");
+
+
+                        banner.Imagen_Banner = $"{dataReader.GetString("Banner")}";
+
+                        banner.Link_Banner = $"{dataReader.GetString("LinkBanner")}";
+
+                        banner.Titulo_Banner = $"{dataReader.GetString("TituloBanner")}";
+
+
+
+
+
+
+                    } catch { }
+
+                               
+
+                    banners.Add(banner);
+                }
+
+                dataReader.Close();
+                CloseConnection();
+            }
+            else {
+
+                CloseConnection();
+                return banners;
+
+
+            }
+        }       // hecho
+
+
+
+        public List<Evento> SelectEventos(string query)
+        {
+
+            List<Evento> eventos = new List<Evento>();
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Evento evento = new Evento();
+
+                    try
+                    {
+
+
+
+                        evento.ID_Evento = Convert.ToInt16($"{dataReader.GetString("ID_Evento")}");
+
+                        evento.Nom_Evento = $"{dataReader.GetString("Nom_Evento")}";
+
+                        evento.Lugar_Evento = $"{dataReader.GetString("Lugar_Evento")}";
+
+                        evento.Fecha_Evento = $"{dataReader.GetString("Fecha_Evento")}";
+
+                        evento.Hora_Evento = $"{dataReader.GetString("Hora_Evento")}";
+
+
+                    }
+                    catch { }
+
+                    eventos.Add(evento);
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return eventos;
+
+
+
+
+
+
+
+            }
+            else {
+
+                CloseConnection();
+                return eventos;
+
+            }
+
+
+
+
+
+
+
+
+
+
+        }       //hecho
+        
+        public List<Deporte> SelectDeportes(string query) {
+
+
+            List<Deporte> deportes = new List<Deporte>();
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Deporte deporte = new Deporte();
+
+                    deporte.ID_Deporte = Convert.ToInt32($"{dataReader.GetString("ID_Deporte")}"); // hecho
+
+
+                    deporte.Nom_Deporte = $"{dataReader.GetString("Nom_Deporte")}";
+
+                    deporte.Categoria = $"{dataReader.GetString("Categoria")}";
+
+
+                    deportes.Add(deporte);
+
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return deportes;
+
+
+            }
+            else {
+
+                CloseConnection();
+                return deportes; 
+
+
+
+
+            }
+
+
+
+
+
+
+
+        } // queda en duda con el profe si poner categoria como atributo de deportes
+        
+        public List<Deportista> SelectDeportista(string query) {
+
+            List<Deportista> deportistas = new List<Deportista>();
+
+
+            if (OpenConnection() == true)
+            {
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Deportista deportista = new Deportista();
+
+                    deportista.ID_Deportista = Convert.ToInt32($"{dataReader.GetString("ID_Deportista")}");
+
+                    deportista.Nom_Deportista = $"{dataReader.GetString("Nom_Deportista")}";
+
+                    deportista.Ape_Deportista = $"{dataReader.GetString("Ape_Deportista")}";
+
+                    deportista.Nacionalidad = $"{dataReader.GetString("Nacionalidad")}";
+
+
+
+                    deportistas.Add(deportista);
+
+
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return deportistas;
+
+            }
+            else {
+
+                CloseConnection();
+                return deportistas;
+
+            }
+
+        } //hecho
+
+        public List<Categoria> SelectCategorias(string query) {
+
+
+            List<Categoria> categorias = new List<Categoria>();
+
+            if (OpenConnection() == true)
+            {
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+
+                while (dataReader.Read())
+                {
+
+                    Categoria categoria = new Categoria();
+
+                    categoria.ID_Categoria = Convert.ToInt32($"{dataReader.GetString("ID_Categoria")}");
+
+                    categoria.Nom_Categoria = $"{dataReader.GetString("Nom_Categoria")}";
+
+                    categorias.Add(categoria);
+
+
+
+
+
+                }
+
+
+                dataReader.Close();
+                CloseConnection();
+                return categorias;
+
+
+
+
+            }
+            else {
+
+                CloseConnection();
+
+                return categorias;
+
+            }
+
+
+        } //hecho
+
+        public int ComprobarExistencia(string query) {
+
+            int resultado = 1;
+
+            try
+            {
+
+                if (OpenConnection() == true)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    resultado = Convert.ToInt32((Int64)cmd.ExecuteScalar());
+
+                    CloseConnection();
+                    return resultado;
+
+
+
+
+                }
+                else
+                {
+
+                    CloseConnection();
+                    return resultado;
+
+
+
+                }
+
+
+
+
+            }
+            catch (Exception ex ){
+
+                MessageBox.Show(ex.Message);
+                CloseConnection();
+                return 1;
+
+
+
+            }
+
+        } //hecho
+
+        public void EjecutarSQL(string query) {
+            try
+            {
+                if (OpenConnection() == true)
+                {
+
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+
+                    CloseConnection();
+
+                    return;
+
+
+
+
+
+
+
+                }
+                else
+                {
+
+                    CloseConnection();
+
+                    return;
+
+
+
+
+
+                }
+
+            }
+            catch (MySqlException ex){
+
+                MessageBox.Show("Error de MySQL");
+                MessageBox.Show(ex.Message);
+
+                CloseConnection(); // cerramos conexion
+
+            }
+
+
+
+
+
+        } //hecho
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
 }
 
