@@ -20,7 +20,41 @@ namespace BackOffice
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            if (txtNomDeporte.Text != "" && txtCategoria.Text != null ) {
+
+                try {
+                    string Nom_Deporte = txtNomDeporte.Text,
+                           Categoria_Deporte = txtCategoria.Text;
+
+
+                    int ID_Categoria = Logica.GetCategoria(3, Categoria_Deporte)[0].ID_Categoria, ID_Deporte;
+
+                    if (Logica.VerificarSiExiste("Deporte", "Nom_Deporte", Nom_Deporte) == 0) {
+
+
+
+                        Logica.InsertarDeporte(Nom_Deporte);
+                        ID_Deporte = Logica.GetDeporte(1, Nom_Deporte)[0].ID_Deporte;
+                        Logica.InsertarDeporteCategorizado(Nom_Deporte, Nom_Categoria, ID_Deporte, ID_Categoria);
+
+                        MessageBox.Show("Deporte creado correctamente");
+                    }
+
+
+                }
+                catch {
+                    MessageBox.Show("Error")
+                }
+
+
+
+            }
+            else {
+
+
+
+
+            }
                 
 
 
@@ -81,35 +115,39 @@ namespace BackOffice
 
         private void btnEliminarDeporte_Click(object sender, EventArgs e, int id, Panel p)
         {
-            DialogResult dialogResultA = MessageBox.Show("¿Seguro desea borrar el deporte?", "" , MessageBoxButtons.YesNo);
+            
 
-                if (dialogResultA == DialogResult.Yes)
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResultA = MessageBox.Show("¿Seguro desea borrar el deporte?", "", MessageBoxButtons.YesNo);
+
+            if (dialogResultA == DialogResult.Yes)
+            {
+
+                try
                 {
 
-                   try {
 
 
-
-                              Logica.Borrar("Deporte", "Nom_Deporte", id + "");
-                              p.Dispose();
-                              MessageBox.Show("Deporte Borrado Correctamente");
-
-
-
-                   } catch { }
-
-                    
-
-
-
+                    Logica.Borrar("Deporte", "Nom_Deporte", id + "");
+                    p.Dispose();
+                    MessageBox.Show("Deporte Borrado Correctamente");
 
 
 
                 }
-            }
+                catch { }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+
+
+
+
+
+
+
+            }
 
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using BackOffice;
 
 namespace Operati2
 {
@@ -17,6 +17,7 @@ namespace Operati2
         }
 
 
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -31,24 +32,28 @@ namespace Operati2
                 bool Igualdad = false;
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
-                var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\Usuarios.json"));
-                int contador = 0;
-                if (usuarios != null)
+
+                if (Logica.VerificarSiExiste("Usuario", "Mmail", user) == 1)
                 {
-                    foreach (var usuario in usuarios)
+                    var u = Logica.GetUsuarios(2, user)[0];
+                    if (Logica.DesencriptamosContra(u.password, "gabriel_moreira") == password)
                     {
-                        if (usuario.UserID == user && usuario.password == password && usuario.nivelPermiso == 3)
-                        {
-                            Igualdad = true;
-                            this.Visible = false;
-                            contador++;
-                            MessageBox.Show("Sesión iniciada correctamente como: " + usuario.UserID);
-                        }
+                        match = true;
+                        uLog = u;
                     }
-                    if (contador == 0)
+                    else
                     {
-                        MessageBox.Show("Usuario Incorrecto");
+                       
+                            MessageBox.Show("Contraseña incorrecta");
+                        
                     }
+                }
+                else
+                {
+                   
+                    
+                        MessageBox.Show("El usuario no existe");
+                    
                 }
 
             }
@@ -84,5 +89,13 @@ namespace Operati2
         {
 
         }
+
+        private void TxtMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+       
     }
 }

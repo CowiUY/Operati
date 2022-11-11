@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Operati2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BackOffice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BOForm());
+            Application.Run(new Login());
         }
     }
 }

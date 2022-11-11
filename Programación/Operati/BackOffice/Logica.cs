@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
 using Operati2;
+using System.Security.Cryptography;
 
 namespace BackOffice
 {
@@ -109,9 +110,9 @@ namespace BackOffice
                     break;
 
             } return deportes;
-        }
+        }  //hecho
 
-        //para terminar 
+        
         public static List<Usuario> GetUsuarios(int a, string constraint, string constraint2, string constraint3)
         {
 
@@ -137,10 +138,197 @@ namespace BackOffice
 
             }return usuarios;
 
+        } // hecho
+
+        public static List<Equipo> GetEquipos(int a, string constraint) {
+
+            List<Equipo> equipos = null;
+
+            switch (a) {
+
+                case 1:
+
+                    equipos = cbd.SelectEquipos("SELECT * FROM Equipo");
+
+                    break;
+
+                case 2:
+
+                    equipos = cbd.SelectEquipos($"SELECT * FROM  Equipo WHERE ID_Equipo = {constraint} OR  Nom_Equipo LIKE '%{constraint}%' OR Pais_Origen LIKE '%{constraint}%'");
+
+                    break;
+
+                    case 3:
+
+                    equipos = cbd.SelectEquipos($"SELECT * FROM Equipo WHERE Nom_Equipo = '{constraint}'");
+
+                    break;
+
+                case 4:
+
+                    equipos = cbd.SelectEquipos($"SELECT * FROM Equipo WHERE ID_Equipo = {constraint}");
+
+                    break;
+
+
+
+
+
+
+
+
+            }return equipos;
+
+
+
+
+
+
+
+
+
         }
 
-        public static List<Encuentro> GetEncuentros(int a, s) { }
+        public static List<Evento> GetEventos(int a , string constraint) {
 
+            List<Evento> eventos = null;
+
+            switch (a) {
+
+                case 1:
+
+                    eventos = cbd.SelectEventos("SELECT * FROM Evento");
+
+                    break;
+                case 2:
+
+                    eventos = cbd.SelectEventos($"SELECT * FROM  Evento WHERE ID_Evento = {constraint}");
+
+                    break;
+                case 3:
+
+                    eventos = cbd.SelectEventos($"SELECT * FROM Evento WHERE Nom_Evento = '{constraint}'");
+
+                    break;
+                case 4:
+
+                    eventos = cbd.SelectEventos($"SELECT * FROM Evento WHERE ID_Evento = {constraint} OR Nom_Evento LIKE '{constraint}'");
+
+                    break;
+
+
+
+
+
+
+
+
+
+            }return eventos;
+
+
+        } // hecho
+
+        public List<PuntuacionRound> GetPuntuaciones(int a, int constraint1, int constraint2, int constraint3)
+        {
+            List<PuntuacionRound> puntuacionRounds = null;
+
+            switch (a) {
+
+                case 1:
+                    puntuacionRounds = cbd.SelectPuntuacionRound($"SELECT * FROM PuntajeRound WHERE ID_Encuentro = '{constraint1}' AND ID_Equipo = '{constraint2}' AND Puntua = '{constraint3}'");
+                    break;
+
+
+
+            }return puntuacionRounds;
+
+
+        }          
+
+        public static List<Persona> GetPersonas(int a, string constraint) {
+
+            List<Persona> personas = null;
+            switch (a) {
+
+                case 1:
+                    personas = cbd.SelectPersona($"SELECT * FROM Persona WHERE CONCAT (Nom_Persona ' ' Ape_Persona) = '{constraint}'");
+                    break;
+
+
+
+
+
+            } return personas;
+
+
+        } // hecho
+
+        public static List<Arbitro> GetArbitros(int a, string constraint) {
+
+            List<Arbitro> arbitros = null;
+
+            switch (a) {
+
+                case 1:
+
+                    arbitros = cbd.SelectArbitros($"SELECT * FROM Arbitro ");
+
+                    break;
+                case 2:
+
+                    arbitros = cbd.SelectArbitros($"SELECT * FROM Arbitro WHERE ID_Persona =  '{constraint}' OR CONCAT(Nombre, ' ' ,Apellido) LIKE '%{constraint}%' OR Nacionalidad LIKE '%{constraint}%'");
+
+                    break;
+                case 3:
+
+                    arbitros = cbd.SelectArbitros($"SELECT * FROM Arbitro WHERE ID_Persona = '{constraint}'");
+
+                    break;
+
+
+
+
+            }
+
+            return arbitros;
+
+
+
+
+
+
+
+        }  //hecho
+
+        public static List<Encuentro> GetEncuentros(int a, string constraint) {
+
+            List<Encuentro> encuentros = null;
+
+            switch (a) {
+
+                case 1:
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM Encuentro");
+                    break;
+                case 2:
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM  Encuentro WHERE ID_Encuentro = '{constraint}' OR Nom_Encuentro LIKE '%{constraint}%' ");
+                    break;
+                case 3:
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM Encuentro WHERE Nom_Encuentro = '{constraint}'");
+               
+                    break;
+                case 4:
+                    encuentros = cbd.SelectEncuentro($"SELCT * FROM Encuentro WHERE ID_Encuentro  = '{constraint}'");
+                    break;
+
+
+
+
+
+
+            }return encuentros;
+
+        }
 
         public static List<Banner> GetBanner(int a, string constraint) {
 
@@ -154,7 +342,7 @@ namespace BackOffice
                     break;
 
                 case 2:
-                    banners = cbd.SelectBanner($"SELECT * FROM Publicidad WHERE ID_Publicidad = '{constraint}' OR " + $"Titulo_Publicidad");
+                    banners = cbd.SelectBanner($"SELECT * FROM Publicidad WHERE ID_Publicidad = '{constraint}' OR  Titulo_Banner LIKE '{constraint}' ");
                     break;
 
                 case 3:
@@ -163,15 +351,10 @@ namespace BackOffice
 
 
 
-
-
             } return banners;
 
 
-
-
-
-        }
+        } //hecho
 
         public static List<Deportista> GetDeportista(int a, string constraint) {
 
@@ -201,44 +384,63 @@ namespace BackOffice
 
 
 
+            }return deportistas;
 
-                   
 
 
-            }
+        } //hecho
+
+        public static List<Categoria> GetCategoria(int a, string constraint) {
+
+            List<Categoria> categorias = new List<Categoria>();
+
+            switch (a) {
+
+                case 1:
+                    categorias = cbd.SelectCategorias("SELECT * FROM Categoria");
+                    break;
+
+                case 2:
+                    categorias = cbd.SelectCategorias($"SELECT FROM Categoria WHERE ID_Categoria = '{constraint}' OR ");
+                    break;
+
+                case 3:
+                    categorias = cbd.SelectCategorias($"SELECT * FROM Categoria WHERE Nom_Categoria = '{constraint}'");
+                    break;
+
+
+
+
+            }return categorias;
+
+
+
+
+
 
 
 
         }
+
+
+        
+
+
+
+
+
+
+
+
 
         public static void InsertBanner(string Titulo_Banner, string Link_Banner, string banner) {
 
-            cbd.EjecutarSQL
+            cbd.EjecutarSQL($"INSERT INTO Publicidad (Titulo_Banner, Link_Banner, Imagen_Banner) VALUES '{Titulo_Banner}', '{Link_Banner}', '{banner}'");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+        } //hecho
 
 
         // public static List<Deporte>
-
-
-
-
-
-
-
 
 
         public static void Borrar(string table, string clave, string data) {
@@ -247,60 +449,71 @@ namespace BackOffice
 
 
 
-        }
-
+        } //hecho
 
         public static int VerificarSiExiste(string table, string clave, string data) {
 
-            int Verif = cbd.CheckSiExiste($"SELECT COUNT(+)FROM{table}WHERE {clave} = '{data}'");
+            int Verif = cbd.CheckSiExiste($"SELECT COUNT(+)FROM '{table}' WHERE '{clave}' = '{data}'");
+            return Verif;
 
-        }
+        }  //hecho
 
-
-
-        public static void InsertarUsuario(string Nom_Usuario, string mail, string password, string nivelPermiso) {
-
-
-
-            cbd.($"INSERT INTO Usuario(Nom_Usuario, mail, Contrasena, nivelPermiso) VALUES({Nom_Usuario}, {mail}, {password}, {nivelPermiso})");
+        public static void InsertarUsuario(string Nom_Usuario, string mail, string password, int nivelPermiso) {
 
 
 
+            cbd.EjecutarSQL($"INSERT INTO Usuario(Nom_Usuario, Mail, password, nivelPermiso) VALUES('{Nom_Usuario}', '{mail}', '{password}', {nivelPermiso})");
 
-        }
+
+
+
+        }  //hecho
 
         public static void InsertarPersona(string nom, string ape, string pais) {
 
 
-            cbd.EjecutarSQL($"INSERT INTO Persona(Nombre, Apellido, Nacionalidad) VALUES ({nom}, {ape}, {pais}) ");
+            cbd.EjecutarSQL($"INSERT INTO Persona(Nom_Persona, Ape_Persona, Nacionalidad) VALUES ('{nom}', '{ape}', '{pais}') ");
+
+
+        }  //hecho 
+
+        public static void InsertarCategoria(string nomcategoria) {
+
+            cbd.EjecutarSQL($"INSERT INTO Categoria (Nom_Categoria) VALUES ('{nomcategoria}')");
+
+        }  //hecho
+
+        public static void InsertarDeporteCategorizado(string nomdeporte,string nomcategoria, int idDeporte, int idCategoria) {
+
+            cbd.EjecutarSQL($"INSERT INTO Deportes_Categorizados (Nom_Deporte, Nom_Categoria, ID_Deporte, ID_Categoria) VALUES ('{nomdeporte}','{nomcategoria}', {idDeporte}, {idCategoria})");
+
 
 
         }
 
+        public static void InsertarDeporte(string nomdepor) {
+
+            cbd.EjecutarSQL($"INSERT INTO Deporte (Nom_Deporte) VALUES ({nomdepor})"); 
 
 
-
-
-
-
+        }  //hecho
 
         public static void InsertarEncuentro(string Nom_encuentro, string Nom_Deporte, string nomArbitro, string HoraInicio, string Lugar, string Fecha) {
 
-            Deporte x = GetDeporte(3, Nom_Deporte)[0];
+            Deportes_Categorizados x = GetDeporte(3, x.Nom_Deporte)[0];
 
             int ID_Deporte = x.ID_Deporte;
 
             int ID_Categoria = GetCategoria(3, x.Nom_Categoria)[0].ID_Categoria;
 
-            int ID_Persona = GetPersona(1, Nom_Arbitro)[0].ID_Persona;
+            int ID_Persona = GetPersonas(1, Nom_Arbitro)[0].ID_Persona;
 
-            cbd.EjecutarSQL($"INSERT INTO Encuentro (Nom_Encuentro, ID_Deporte, ID_Categoria, ID_Persona , HoraInicio, Lugar, Fecha) VALUES ({Nom_encuentro}, {ID_Deporte}, {ID_Categoria}, {ID_Persona}, {HoraInicio}, '{Lugar}', '{Fecha}',)")
-
-
+            cbd.EjecutarSQL($"INSERT INTO Encuentro (Nom_Encuentro, ID_Deporte, ID_Categoria, ID_Persona , HoraInicio, Lugar, Fecha) VALUES ('{Nom_encuentro}', {ID_Deporte}, {ID_Categoria}, {ID_Persona}, '{HoraInicio}', '{Lugar}', '{Fecha}',)");
 
 
-        }
 
+
+        } //hecho
 
         public static void InsertarPuntuacion(int ID_Encuentro, int Puntos, int ID_Equipo) {
 
@@ -315,29 +528,93 @@ namespace BackOffice
         public static void InsertarDeportista(string Nom_Deportista, string Ape_Deportista, string Nacionalidad) {
 
 
-            int ID_Persona = GetPersona(1, Nom_Deportista + " " + Ape_Deportista)[0].ID_Persona;
+            int ID_Persona = GetPersonas(1, Nom_Deportista + " " + Ape_Deportista)[0].ID_Persona;
 
-            cbd.EjecutarSQL($"INSERT INTO Deportista(ID_Persona, Nom_Deportista, Ape_Deportista, Nacionalidad) VALUES ({ID_Persona}, {Nom_Deportista}, {Ape_Deportista}, {Nacionalidad})");
-
-
+            cbd.EjecutarSQL($"INSERT INTO Deportista(ID_Persona, Nom_Deportista, Ape_Deportista, Nacionalidad) VALUES ({ID_Persona}, '{Nom_Deportista}', '{Ape_Deportista}', '{Nacionalidad}')");
 
 
+
+
+        } //hecho
+
+        public static void InsertarEquipo(string nom, string origen) {
+
+            cbd.EjecutarSQL($"INSERT INTO Equipo(Nom_Equipo, Pais_Origen) VALUES ('{nom}', '{origen}')");
+
+
+
+        }  //hecho
+
+        public static void InsertarArbitro(string nom, string ape, string nacionalidad) {
+
+            int ID_Persona = GetPersonas(1, nom + " " + ape)[0].ID_Persona;
+
+            cbd.EjecutarSQL($"INSERT INTO Arbitro (ID_Persona, Nom_Arbitro, Ape_Arbitro, Nacionalidad) VALUES ({ID_Persona}, '{nom}', '{ape}', '{nacionalidad}')");
+
+
+        } //hecho
+
+
+
+  
+        
+        
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+        //howtoEncript
+
+        public static TripleDES DesencriptarCl (string clave) {
+
+            MD5 md5 = new MD5CryptoServiceProvider(); // provider q nos da un servicio facil para encriptar
+            TripleDES tripleDES = new TripleDESCryptoServiceProvider();
+
+            tripleDES.Key = md5.ComputeHash(Encoding.Unicode.GetBytes(clave));
+
+            tripleDES.IV = new byte[tripleDES.BlockSize / 0];
+
+            return tripleDES;
+        }
+
+        public static string EncriptamosContra(string txtA, string password)
+        {
+
+            byte[] txtABytes = Encoding.Unicode.GetBytes(txtA);
+
+            MemoryStream memoryFlow = new MemoryStream();
+
+            //using System.Security.Cryptography;  Realiza el cifrado y descifrado simétricos mediante la implementación de interfaces de programación de aplicaciones criptográficas .
+
+            TripleDES tripleDES = DesencriptarCl(password);
+
+
+
+            CryptoStream EncriptFlow = new CryptoStream(memoryFlow, tripleDES.CreateEncryptor(), CryptoStreamMode.Write); // creamos el encriptador
+
+
+            EncriptFlow.Write(txtABytes, 0, txtABytes.Length);
+            EncriptFlow.FlushFinalBlock();
+
+            return Convert.ToBase64String(memoryFlow.ToArray());
+        }
+
+        public static string DesencriptamosContra(string txtYaEncriptado, string password) {
+
+            byte[] txtyaEncriptadoByte = Convert.FromBase64String(txtYaEncriptado);
+            MemoryStream memoryFlow = new MemoryStream();
+            TripleDES tripleDES = DesencriptarCl(password);
+
+
+            CryptoStream DesencriptFlow = new CryptoStream(memoryFlow, tripleDES.CreateDecryptor(), CryptoStreamMode.Write); // creamos el desencriptador
+
+
+            DesencriptFlow.Write(txtyaEncriptadoByte, 0, txtyaEncriptadoByte.Length);
+            DesencriptFlow.FlushFinalBlock();
+
+            return Encoding.Unicode.GetString(memoryFlow.ToArray());
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

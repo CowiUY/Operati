@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BOForm));
             this.btnUser = new System.Windows.Forms.Button();
             this.btnBanners = new System.Windows.Forms.Button();
             this.btnDeportes = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
+            this.PanelGestion = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelGestion)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUser
             // 
             this.btnUser.AutoSize = true;
-            this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnUser.BackColor = System.Drawing.Color.Transparent;
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUser.Location = new System.Drawing.Point(107, 64);
+            this.btnUser.Location = new System.Drawing.Point(202, 64);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(172, 83);
             this.btnUser.TabIndex = 0;
@@ -50,9 +53,9 @@
             // btnBanners
             // 
             this.btnBanners.AutoSize = true;
-            this.btnBanners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnBanners.BackColor = System.Drawing.Color.Transparent;
             this.btnBanners.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBanners.Location = new System.Drawing.Point(481, 64);
+            this.btnBanners.Location = new System.Drawing.Point(406, 64);
             this.btnBanners.Name = "btnBanners";
             this.btnBanners.Size = new System.Drawing.Size(170, 83);
             this.btnBanners.TabIndex = 1;
@@ -63,9 +66,9 @@
             // btnDeportes
             // 
             this.btnDeportes.AutoSize = true;
-            this.btnDeportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnDeportes.BackColor = System.Drawing.Color.Transparent;
             this.btnDeportes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDeportes.Location = new System.Drawing.Point(107, 197);
+            this.btnDeportes.Location = new System.Drawing.Point(202, 165);
             this.btnDeportes.Name = "btnDeportes";
             this.btnDeportes.Size = new System.Drawing.Size(172, 83);
             this.btnDeportes.TabIndex = 2;
@@ -76,9 +79,9 @@
             // btnEventos
             // 
             this.btnEventos.AutoSize = true;
-            this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEventos.BackColor = System.Drawing.Color.Transparent;
             this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEventos.Location = new System.Drawing.Point(481, 197);
+            this.btnEventos.Location = new System.Drawing.Point(406, 165);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(172, 83);
             this.btnEventos.TabIndex = 3;
@@ -86,12 +89,22 @@
             this.btnEventos.UseVisualStyleBackColor = false;
             this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
+            // PanelGestion
+            // 
+            this.PanelGestion.Location = new System.Drawing.Point(33, 317);
+            this.PanelGestion.Name = "PanelGestion";
+            this.PanelGestion.Size = new System.Drawing.Size(728, 90);
+            this.PanelGestion.TabIndex = 25;
+            this.PanelGestion.TabStop = false;
+            // 
             // BOForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(8)))), ((int)(((byte)(21)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PanelGestion);
             this.Controls.Add(this.btnEventos);
             this.Controls.Add(this.btnDeportes);
             this.Controls.Add(this.btnBanners);
@@ -99,6 +112,7 @@
             this.Name = "BOForm";
             this.Text = "BackOffice";
             this.Load += new System.EventHandler(this.BOForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelGestion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,6 +124,7 @@
         private System.Windows.Forms.Button btnBanners;
         private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Button btnEventos;
+        private System.Windows.Forms.PictureBox PanelGestion;
     }
 }
 

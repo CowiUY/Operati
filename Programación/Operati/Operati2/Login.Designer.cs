@@ -101,6 +101,7 @@
             this.TxtMail.Name = "TxtMail";
             this.TxtMail.Size = new System.Drawing.Size(227, 20);
             this.TxtMail.TabIndex = 10;
+            this.TxtMail.TextChanged += new System.EventHandler(this.TxtMail_TextChanged);
             // 
             // btnCerrar
             // 
@@ -137,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(19)))), ((int)(((byte)(38)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(432, 274);
             this.Controls.Add(this.lblNOCuenta);
             this.Controls.Add(this.btnRegisto);

@@ -79,12 +79,9 @@ namespace BackOffice
 
         private void btnVerEventos_Click(object sender, EventArgs e)
         {
-            bool tipo = true;
-            Evento evento = new Evento();
-            evento.conexion = Program.conexion;
-            Program.GestionDeEventos.dtgEventos.DataSource = evento.ListarEventos(tipo);
+          
 
-            MessageBox.Show(Convert.ToString(dtFecha1.Text));
+            
         }
 
         private void GestionDeEventos_Load(object sender, EventArgs e)
@@ -94,45 +91,21 @@ namespace BackOffice
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            Logica.
         }
 
 
         private void crearEvento(bool alta){
 
 
-            Evento nuevoEvento = new Evento();
-            nuevoEvento.nombre = txtNombreEncuentro.Text;
-            nuevoEvento.pais = txtPais.Text;
-            nuevoEvento.inicio = "false";
-            nuevoEvento.final = "false";
-            nuevoEvento.resultado = txtResultado.Text;
-            if (!alta)
-            {
-                nuevoEvento.id = Convert.ToInt32(txtID.Text);
-
-            }
-            else
-            {
-
-            }
-            nuevoEvento.Guardar(alta);
-            LimpiarTextS();
+           
+     
 
         }
 
 
-        private void LimpiarTtxS()
-        {
-            txtID.Clear();
-            txtNombreEncuentro.Clear();
-            txtPais.Clear();
-            //  txtFecha.Clear();
-            //txtHora.Clear();
-            txtResultado.Clear();
-
-
-        }
+   
+        
 
         private void dtpFechaCrear_ValueChanged(object sender, EventArgs e)
         {
@@ -140,6 +113,30 @@ namespace BackOffice
         }
 
         private void dtFecha1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+        bool CambiarFormatoDeFecha(string user , string value = ":") {
+
+
+            return user.Contains(value);
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

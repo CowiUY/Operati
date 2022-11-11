@@ -9,6 +9,5 @@
         public string Titulo_Banner { get; set; }
 
         public string Imagen_Banner { get; set; }
-
     }
 }

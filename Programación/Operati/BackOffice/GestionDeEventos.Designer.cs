@@ -28,23 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeEventos));
             this.dtgEventos = new System.Windows.Forms.DataGridView();
-            this.btnVerEventos = new System.Windows.Forms.Button();
-            this.txtFecha = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblresultado = new System.Windows.Forms.Label();
-            this.txtResultado = new System.Windows.Forms.TextBox();
+            this.txtFechaEvento = new System.Windows.Forms.TextBox();
+            this.txtHoraEvento = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblLugar = new System.Windows.Forms.Label();
+            this.txtLugarEvento = new System.Windows.Forms.TextBox();
             this.txtNombreEncuentro = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtPais = new System.Windows.Forms.TextBox();
             this.lblNombreEncuentro = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.dtFecha1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -62,61 +58,52 @@
             this.dtgEventos.Name = "dtgEventos";
             this.dtgEventos.Size = new System.Drawing.Size(571, 271);
             this.dtgEventos.TabIndex = 67;
+            this.dtgEventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEventos_CellContentClick);
             // 
-            // btnVerEventos
+            // txtFechaEvento
             // 
-            this.btnVerEventos.Location = new System.Drawing.Point(211, 426);
-            this.btnVerEventos.Name = "btnVerEventos";
-            this.btnVerEventos.Size = new System.Drawing.Size(266, 41);
-            this.btnVerEventos.TabIndex = 66;
-            this.btnVerEventos.Text = "MOSTRAR LISTA COMPLETA";
-            this.btnVerEventos.UseVisualStyleBackColor = true;
-            this.btnVerEventos.Click += new System.EventHandler(this.btnVerEventos_Click);
+            this.txtFechaEvento.Enabled = false;
+            this.txtFechaEvento.Location = new System.Drawing.Point(780, 174);
+            this.txtFechaEvento.Name = "txtFechaEvento";
+            this.txtFechaEvento.Size = new System.Drawing.Size(100, 20);
+            this.txtFechaEvento.TabIndex = 90;
             // 
-            // txtFecha
+            // txtHoraEvento
             // 
-            this.txtFecha.Enabled = false;
-            this.txtFecha.Location = new System.Drawing.Point(780, 174);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(100, 20);
-            this.txtFecha.TabIndex = 90;
+            this.txtHoraEvento.Enabled = false;
+            this.txtHoraEvento.Location = new System.Drawing.Point(773, 220);
+            this.txtHoraEvento.Name = "txtHoraEvento";
+            this.txtHoraEvento.Size = new System.Drawing.Size(107, 20);
+            this.txtHoraEvento.TabIndex = 89;
             // 
-            // txtHora
+            // lblFecha
             // 
-            this.txtHora.Enabled = false;
-            this.txtHora.Location = new System.Drawing.Point(773, 220);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(107, 20);
-            this.txtHora.TabIndex = 89;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(735, 181);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(37, 13);
+            this.lblFecha.TabIndex = 88;
+            this.lblFecha.Text = "Fecha";
             // 
-            // label6
+            // lblLugar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(735, 181);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 88;
-            this.label6.Text = "Fecha";
+            this.lblLugar.AutoSize = true;
+            this.lblLugar.Location = new System.Drawing.Point(699, 303);
+            this.lblLugar.Name = "lblLugar";
+            this.lblLugar.Size = new System.Drawing.Size(34, 13);
+            this.lblLugar.TabIndex = 80;
+            this.lblLugar.Text = "Lugar";
             // 
-            // lblresultado
+            // txtLugarEvento
             // 
-            this.lblresultado.AutoSize = true;
-            this.lblresultado.Location = new System.Drawing.Point(699, 303);
-            this.lblresultado.Name = "lblresultado";
-            this.lblresultado.Size = new System.Drawing.Size(55, 13);
-            this.lblresultado.TabIndex = 80;
-            this.lblresultado.Text = "Resultado";
-            // 
-            // txtResultado
-            // 
-            this.txtResultado.Location = new System.Drawing.Point(760, 303);
-            this.txtResultado.Name = "txtResultado";
-            this.txtResultado.Size = new System.Drawing.Size(107, 20);
-            this.txtResultado.TabIndex = 79;
+            this.txtLugarEvento.Location = new System.Drawing.Point(760, 303);
+            this.txtLugarEvento.Name = "txtLugarEvento";
+            this.txtLugarEvento.Size = new System.Drawing.Size(107, 20);
+            this.txtLugarEvento.TabIndex = 79;
             // 
             // txtNombreEncuentro
             // 
-            this.txtNombreEncuentro.Location = new System.Drawing.Point(780, 91);
+            this.txtNombreEncuentro.Location = new System.Drawing.Point(780, 132);
             this.txtNombreEncuentro.Name = "txtNombreEncuentro";
             this.txtNombreEncuentro.Size = new System.Drawing.Size(100, 20);
             this.txtNombreEncuentro.TabIndex = 69;
@@ -138,6 +125,7 @@
             this.btnEliminar.TabIndex = 77;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -149,17 +137,10 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // txtPais
-            // 
-            this.txtPais.Location = new System.Drawing.Point(780, 132);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(100, 20);
-            this.txtPais.TabIndex = 70;
-            // 
             // lblNombreEncuentro
             // 
             this.lblNombreEncuentro.AutoSize = true;
-            this.lblNombreEncuentro.Location = new System.Drawing.Point(663, 98);
+            this.lblNombreEncuentro.Location = new System.Drawing.Point(663, 139);
             this.lblNombreEncuentro.Name = "lblNombreEncuentro";
             this.lblNombreEncuentro.Size = new System.Drawing.Size(111, 13);
             this.lblNombreEncuentro.TabIndex = 71;
@@ -174,37 +155,10 @@
             this.lblHora.TabIndex = 72;
             this.lblHora.Text = "Hora inicio \r\n\r\n Hr : Min";
             // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(744, 139);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(27, 13);
-            this.lblPais.TabIndex = 73;
-            this.lblPais.Text = "Pais";
-            // 
-            // dtFecha1
-            // 
-            this.dtFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFecha1.Location = new System.Drawing.Point(407, 88);
-            this.dtFecha1.Name = "dtFecha1";
-            this.dtFecha1.Size = new System.Drawing.Size(90, 20);
-            this.dtFecha1.TabIndex = 95;
-            this.dtFecha1.ValueChanged += new System.EventHandler(this.dtFecha1_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(433, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "Fecha";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 71);
+            this.label2.Location = new System.Drawing.Point(333, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 93;
@@ -213,7 +167,7 @@
             // txtBuscarNombre
             // 
             this.txtBuscarNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBuscarNombre.Location = new System.Drawing.Point(200, 87);
+            this.txtBuscarNombre.Location = new System.Drawing.Point(295, 85);
             this.txtBuscarNombre.Name = "txtBuscarNombre";
             this.txtBuscarNombre.Size = new System.Drawing.Size(169, 20);
             this.txtBuscarNombre.TabIndex = 92;
@@ -221,7 +175,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscar.Location = new System.Drawing.Point(97, 84);
+            this.btnBuscar.Location = new System.Drawing.Point(192, 82);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(65, 23);
             this.btnBuscar.TabIndex = 91;
@@ -233,28 +187,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(950, 521);
-            this.Controls.Add(this.dtFecha1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBuscarNombre);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtFecha);
-            this.Controls.Add(this.txtHora);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblresultado);
-            this.Controls.Add(this.txtResultado);
+            this.Controls.Add(this.txtFechaEvento);
+            this.Controls.Add(this.txtHoraEvento);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.lblLugar);
+            this.Controls.Add(this.txtLugarEvento);
             this.Controls.Add(this.txtNombreEncuentro);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtPais);
             this.Controls.Add(this.lblNombreEncuentro);
             this.Controls.Add(this.lblHora);
-            this.Controls.Add(this.lblPais);
             this.Controls.Add(this.dtgEventos);
-            this.Controls.Add(this.btnVerEventos);
             this.Name = "GestionDeEventos";
             this.Text = "GestionDeEventos";
             this.Load += new System.EventHandler(this.GestionDeEventos_Load);
@@ -267,22 +217,17 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dtgEventos;
-        public System.Windows.Forms.Button btnVerEventos;
-        public System.Windows.Forms.TextBox txtFecha;
-        public System.Windows.Forms.TextBox txtHora;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblresultado;
-        public System.Windows.Forms.TextBox txtResultado;
+        public System.Windows.Forms.TextBox txtFechaEvento;
+        public System.Windows.Forms.TextBox txtHoraEvento;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblLugar;
+        public System.Windows.Forms.TextBox txtLugarEvento;
         public System.Windows.Forms.TextBox txtNombreEncuentro;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnAgregar;
-        public System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label lblNombreEncuentro;
         private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.Label lblPais;
-        public System.Windows.Forms.DateTimePicker dtFecha1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtBuscarNombre;
         public System.Windows.Forms.Button btnBuscar;

@@ -1,11 +1,13 @@
-﻿namespace Operati2
+﻿namespace BackOffice
 {
     public class Deporte
     {
-        public string IdDeporte { get; set; }
 
-        public string NomEquipo { get; set; }
+        public int ID_Deporte { get; set; }
 
-        public string Categoria { get; set; }
+        public string Nom_Deporte { get; set; }
+
+       
+
     }
 }

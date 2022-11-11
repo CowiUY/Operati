@@ -28,7 +28,7 @@ namespace BackOffice
         public GestionDeBanners()
         {
             InitializeComponent();
-            CargarBanners();
+           
         }
 
 
@@ -118,7 +118,7 @@ namespace BackOffice
 
                             Logica.InsertBanner(Link_Banner, Titulo_Banner, FilePath);
                             MessageBox.Show("Banner creado correctamente");
-                            CargarBanners();
+                            
 
 
 

@@ -37,6 +37,7 @@
             this.btnMas = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -46,6 +47,7 @@
             // panPanel
             // 
             this.panPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panPanel.Controls.Add(this.textBox1);
             this.panPanel.Controls.Add(this.Imagen);
             this.panPanel.Controls.Add(this.btnConfig);
             this.panPanel.Controls.Add(this.btnLogin);
@@ -70,7 +72,7 @@
             // btnConfig
             // 
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Location = new System.Drawing.Point(776, 64);
+            this.btnConfig.Location = new System.Drawing.Point(822, 61);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(52, 33);
             this.btnConfig.TabIndex = 16;
@@ -80,7 +82,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(714, 35);
+            this.btnLogin.Location = new System.Drawing.Point(760, 32);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(114, 23);
             this.btnLogin.TabIndex = 7;
@@ -90,7 +92,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(525, 34);
+            this.btnBuscar.Location = new System.Drawing.Point(592, 34);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(64, 21);
             this.btnBuscar.TabIndex = 15;
@@ -101,7 +103,7 @@
             // btnMas
             // 
             this.btnMas.FormattingEnabled = true;
-            this.btnMas.Location = new System.Drawing.Point(613, 35);
+            this.btnMas.Location = new System.Drawing.Point(680, 34);
             this.btnMas.Name = "btnMas";
             this.btnMas.Size = new System.Drawing.Size(74, 21);
             this.btnMas.TabIndex = 6;
@@ -125,6 +127,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(728, 312);
             this.dataGridView1.TabIndex = 25;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(153, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(433, 20);
+            this.textBox1.TabIndex = 18;
+            // 
             // Frmuno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +146,7 @@
             this.Name = "Frmuno";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panPanel.ResumeLayout(false);
+            this.panPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -154,6 +164,7 @@
         private System.Windows.Forms.ComboBox btnMas;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

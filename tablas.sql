@@ -3,9 +3,8 @@ use gabriel_moreira;
 CREATE TABLE Usuario(
 ID_Usuario int PRIMARY KEY,
 Mail varchar(35) NOT NULL,
-Nom_Usuario varchar(25) NOT NULL,
-password varchar(30) NOT NULL,
-nivelPermiso int NOT NULL);
+Nombre varchar(25) NOT NULL,
+Contrasena varchar(30) NOT NULL);
 
 CREATE TABLE Rol (
 ID_Rol int PRIMARY KEY,
@@ -30,55 +29,20 @@ Nom_Deporte varchar(20) NOT NULL);
 CREATE TABLE Evento_Deportivo (
 ID_Evento int PRIMARY KEY,
 Nom_Evento varchar (40) NOT NULL,
-Fecha_Evento DATE NOT NULL,
-Hora_Evento varchar(5) NOT NULL,
-Lugar_Evento varchar(20) NOT NULL);
+Individual boolean NOT NULL,
+Cant_Participantes int NOT NULL);
 
 CREATE TABLE Categorias (
 ID_Categoria int PRIMARY KEY,
-Nom_Categoria varchar(15) NOT NULL);
-
-CREATE TABLE Banner (
-ID_Banner int PRIMARY KEY,
-Link_Banner varchar(50),
-Titulo_Banner varchar(15),
-Imagen_Banner varchar(50));
+Categoria varchar(15) NOT NULL);
 
 CREATE TABLE Participante (
 ID_Participante int PRIMARY KEY );
 
 CREATE TABLE Equipo (
-ID_Equipo int PRIMARY KEY,
+ID_Participante int PRIMARY KEY,
 Nom_Equipo varchar(35) NOT NULL,
-Pais_Origen varchar (15));
-
-CREATE TABLE Persona (
-ID_Persona int PRIMARY KEY,
-Nom_Persona varchar(15),
-Ape_Persona varchar (15),
-Nacionalidad varchar (15));
-
-CREATE TABLE EquiposDeDeportistas (
-ID_Equipo int PRIMARY KEY,
-ID_Persona int NOT NULL,
-Nombre varchar (15) NOT NULL,
-Apellido varchar (15) NOT NULL,
-Nacionalidad varchar(15) NOT NULL);
-
-CREATE TABLE Deportista (
-ID_Deportista int PRIMARY KEY,
-Nom_Deportista varchar(15) NOT NULL,
-Ape_Deportista varchar(15) NOT NULL,
-Nacionalidad varchar(15) NOT NULL);
-
-CREATE TABLE Encuentro (
-ID_Encuentro int PRIMARY KEY,
-ID_Deporte int NOT NULL,
-ID_Categoria int NOT NULL,
-ID_Persona int NOT NULL,
-Hora varchar(5) NOT NULL,
-Fecha DATE NOT NULL,
-Nom_Encuentro varchar (15) NOT NULL);
+FOREIGN KEY (ID_Participante) references Participante(ID_Participante));
 
 CREATE TABLE Jugador (
 ID_Participante int PRIMARY KEY,
@@ -133,23 +97,8 @@ FOREIGN KEY (ID_Notificacion) references Notificacion(ID_Notificacion));
 
 CREATE TABLE Encuentro (
 ID_Encuentro int PRIMARY KEY,
-ID_Deporte int NOT NULL,
-ID_Categoria int NOT NULL,
-ID_Persona int NOT NULL,
-Nombre varchar(15) NOT NULL,
 Hora varchar(8) NOT NULL,
-Fecha DATE);
-
-CREATE TABLE Puntuacion (
-ID_Puntuacion int PRIMARY KEY,
-Puntua int NOT NULL,
-ID_Encuentro int NOT NULL);
-
-CREATE TABLE Arbitro (
-ID_Persona int PRIMARY KEY,
-Nombre varchar(15) NOT NULL,
-Apellido varchar(15) NOT NULL,
-Nacionalidad varchar(10) NOT NULL);
+Fecha DATE );
 
 CREATE TABLE Lugares (
 ID_Lugar int PRIMARY KEY,

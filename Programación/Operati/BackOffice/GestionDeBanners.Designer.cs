@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionDeBanners));
             this.PBimagen = new System.Windows.Forms.PictureBox();
             this.btnImportImage = new System.Windows.Forms.Button();
             this.btnAgregoBanner = new System.Windows.Forms.Button();
@@ -62,7 +63,7 @@
             // 
             // btnAgregoBanner
             // 
-            this.btnAgregoBanner.Location = new System.Drawing.Point(229, 460);
+            this.btnAgregoBanner.Location = new System.Drawing.Point(242, 455);
             this.btnAgregoBanner.Name = "btnAgregoBanner";
             this.btnAgregoBanner.Size = new System.Drawing.Size(115, 55);
             this.btnAgregoBanner.TabIndex = 4;
@@ -130,7 +131,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(585, 640);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.button1);

@@ -57,7 +57,7 @@ namespace BackOffice
         }
 
 
-        //open connection to database
+        //Abre conexion a la base
         private bool OpenConnection()
         {
             try
@@ -264,7 +264,7 @@ namespace BackOffice
             }
         }
 
-        // checkea si existe
+        //Checkea si existe
         public int CheckSiExiste(string query)
         {
 
@@ -352,12 +352,11 @@ namespace BackOffice
 
                     usuario.ID_Usuario = Convert.ToInt16($"{dataReader.GetString("ID_Usuario")}");
 
-
                     usuario.Mail = $"{dataReader.GetString("Mail")}";
 
                     usuario.Nom_Usuario = $"{dataReader.GetString("Nom_Usuario")}";
 
-                    usuario.password = $"{dataReader.GetString("Contrasena")}";
+                    usuario.password = $"{dataReader.GetString("password")}";
 
                     usuario.nivelPermiso = Convert.ToInt16($"{dataReader.GetString("nivelPermiso")}");
 
@@ -381,7 +380,7 @@ namespace BackOffice
 
             }
 
-        } //hecho
+        }                    //hecho
 
         public List<Equipo> SelectEquipos(string query) {
 
@@ -433,7 +432,7 @@ namespace BackOffice
             } catch { return equipos; }
 
 
-        }  // hecho
+        }                     //hecho
         
         public List<Banner> SelectBanner(string query) {
 
@@ -458,7 +457,7 @@ namespace BackOffice
                         banner.ID_Banner = Convert.ToInt32($"{dataReader.GetString("IdPublicidad")}");
 
 
-                        banner.Imagen_Banner = $"{dataReader.GetString("Banner")}";
+                        banner.Imagen_Banner = $"{dataReader.GetString("Imagen_Banner")}";
 
                         banner.Link_Banner = $"{dataReader.GetString("LinkBanner")}";
 
@@ -488,8 +487,104 @@ namespace BackOffice
 
 
             }
-        }       // hecho
-        
+        }                      //hecho
+
+        public List<Persona> SelectPersona(string query) {
+
+            List<Persona> personas = new List<Persona>();
+
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Persona persona = new Persona();
+
+                    persona.ID_Persona = Convert.ToInt16($"{dataReader.GetString("ID_Persona")}");
+
+                    persona.Nom_Persona = $"{dataReader.GetString("Nom_Persona")}";
+
+                    persona.Ape_Persona = $"{dataReader.GetString("Ape_Persona")}";
+
+                    persona.Nacionalidad = $"{dataReader.GetString("Nacionalidad")}";
+
+                    personas.Add(persona);
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return personas;
+
+
+            }
+            else
+            {
+                CloseConnection();
+                return personas;
+            }
+
+
+
+
+
+
+
+        }                    //hecho
+
+        public List<Encuentro> SelectEncuentro(string query) {
+
+            List<Encuentro> encuentros = new List<Encuentro>(); 
+
+            if (OpenConnection() == true) {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read()) {
+
+                    Encuentro encuentro = new Encuentro();
+
+                    encuentro.ID_Encuentro = Convert.ToInt16($"{dataReader.GetString("ID_Encuentro")}");
+
+                    encuentro.ID_Persona = Convert.ToInt16($"{dataReader.GetString("ID_Persona")}");
+
+                    encuentro.ID_Categoria = Convert.ToInt16($"{dataReader.GetString("ID_Categoria")}");
+
+                    encuentro.ID_Deporte = Convert.ToInt16($"{dataReader.GetString("ID_Deporte")}");
+
+                    encuentro.Hora = $"{dataReader.GetString("Hora")}";
+
+                    encuentro.Fecha = $"{dataReader.GetString("Fecha")}";
+
+                    encuentro.Nom_Encuentro = $"{dataReader.GetString("Nom_Encuentro")}";
+
+                    encuentros.Add(encuentro);
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return encuentros;
+
+
+
+            } else {
+
+                CloseConnection();
+
+                return encuentros;
+
+            }
+        }
+
         public List<Evento> SelectEventos(string query)
         {
 
@@ -557,8 +652,8 @@ namespace BackOffice
 
 
 
-        }       //hecho
-        
+        }                      //hecho
+         
         public List<Deporte> SelectDeportes(string query) {
 
 
@@ -577,11 +672,10 @@ namespace BackOffice
 
                     deporte.ID_Deporte = Convert.ToInt32($"{dataReader.GetString("ID_Deporte")}"); // hecho
 
+                    deporte.Categoria_Deporte = $"{dataReader.GetString("Categoria")}";
+
 
                     deporte.Nom_Deporte = $"{dataReader.GetString("Nom_Deporte")}";
-
-                    deporte.Categoria = $"{dataReader.GetString("Categoria")}";
-
 
                     deportes.Add(deporte);
 
@@ -599,10 +693,6 @@ namespace BackOffice
 
                 CloseConnection();
                 return deportes; 
-
-
-
-
             }
 
 
@@ -611,7 +701,56 @@ namespace BackOffice
 
 
 
-        } // queda en duda con el profe si poner categoria como atributo de deportes
+        }                   //hecho
+
+        public List<Arbitro> SelectArbitros(string query) {
+
+            List<Arbitro> arbitros = new List<Arbitro>();
+
+            if (OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    Arbitro arbitro = new Arbitro();
+
+
+                    arbitro.ID_Persona = Convert.ToInt16($"{dataReader.GetString("ID_Persona")}");
+
+                    arbitro.Nom_Arbitro = $"{dataReader.GetString("Nom_Arbitro")}";
+
+                    arbitro.Ape_Arbitro = $"{dataReader.GetString("Ape_Arbitro")}";
+
+                    arbitro.Nacionalidad = $"{dataReader.GetString("Nacioalidad")}";
+
+
+
+
+                    arbitros.Add(arbitro);
+
+
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                return arbitros;
+
+            }
+            else
+            {
+
+                CloseConnection();
+                return arbitros;
+
+            }
+
+
+        }                   // hecho
         
         public List<Deportista> SelectDeportista(string query) {
 
@@ -659,7 +798,7 @@ namespace BackOffice
 
             }
 
-        } //hecho
+        }              //hecho
 
         public List<Categoria> SelectCategorias(string query) {
 
@@ -709,7 +848,83 @@ namespace BackOffice
             }
 
 
-        } //hecho
+        }               //hecho
+
+        public List<EncuentrosEquipo> SelectEncuentrosEquipo(string query) {
+
+            List<EncuentrosEquipo> encuentrosEquipos = new List<EncuentrosEquipo>();
+
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+
+                    try {
+
+                        EncuentrosEquipo encuentroEquipo = new EncuentrosEquipo();
+
+                        encuentroEquipo.ID_Encuentro = Convert.ToInt16($"{dataReader.GetString("ID_Encuentro")}");
+
+                        encuentroEquipo.ID_Categoria = Convert.ToInt16($"{dataReader.GetString("ID_Categoria")}");
+
+                        encuentroEquipo.ID_Deporte = Convert.ToInt16($"{dataReader.GetString("ID_Deporte")}");
+
+                        encuentroEquipo.ID_Equipo = Convert.ToInt16($"{dataReader.GetString("ID_Equipo")}");
+
+                        encuentroEquipo.ID_Persona = Convert.ToInt16($"{dataReader.GetString("ID_Persona")}");
+
+                        encuentroEquipo.Puntuacion = Convert.ToInt16($"{dataReader.GetString("Puntuacion")}");
+
+                        encuentroEquipo.Nom_Equipo = $"{dataReader.GetString("Nom_Equipo")}";
+
+                        encuentroEquipo.Nom_Encuentro = $"{dataReader.GetString("Nom_Encuentro")}";
+
+                        encuentroEquipo.Fecha = $"{dataReader.GetString("Fecha")}";
+
+                        encuentroEquipo.Hora = $"{dataReader.GetString("Hora")}";
+
+                        encuentroEquipo.Lugar = $"{dataReader.GetString("Lugar")}";
+
+                    } catch { }
+
+
+
+                }
+
+                CloseConnection();
+                dataReader.Close();
+
+                return encuentrosEquipos;
+
+
+
+
+
+
+
+            }
+            else {
+
+                CloseConnection();
+
+                return encuentrosEquipos;
+
+
+            }
+
+        
+
+
+
+
+
+
+
+
+        }  //hecho
 
         public int ComprobarExistencia(string query) {
 
@@ -755,7 +970,7 @@ namespace BackOffice
 
             }
 
-        } //hecho
+        }                        //hecho
 
         public void EjecutarSQL(string query) {
             try
@@ -804,7 +1019,9 @@ namespace BackOffice
 
 
 
-        } //hecho
+        }                               //hecho
+
+
 
 
 
