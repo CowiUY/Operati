@@ -4,7 +4,7 @@ namespace Operati2
     public class Usuario
     {
 
-        public string UserID { get; set; }
+        public string ID_Usuario { get; set; }
 
         public string mail { get; set; }
 

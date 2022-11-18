@@ -32,28 +32,24 @@ namespace Operati2
                 bool Igualdad = false;
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
-
-                if (Logica.VerificarSiExiste("Usuario", "Mmail", user) == 1)
+                var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
+                int contador = 0;
+                if (usuarios != null)
                 {
-                    var u = Logica.GetUsuarios(2, user)[0];
-                    if (Logica.DesencriptamosContra(u.password, "gabriel_moreira") == password)
+                    foreach (var usuario in usuarios)
                     {
-                        match = true;
-                        uLog = u;
+                        if (usuario.ID_Usuario == user && usuario.password == password && usuario.nivelPermiso == 3)
+                        {
+                            Igualdad = true;
+                            this.Visible = false;
+                            contador++;
+                            MessageBox.Show("Sesión iniciada correctamente como: " + usuario.ID_Usuario);
+                        }
                     }
-                    else
+                    if (contador == 0)
                     {
-                       
-                            MessageBox.Show("Contraseña incorrecta");
-                        
+                        MessageBox.Show("Usuario Incorrecto");
                     }
-                }
-                else
-                {
-                   
-                    
-                        MessageBox.Show("El usuario no existe");
-                    
                 }
 
             }

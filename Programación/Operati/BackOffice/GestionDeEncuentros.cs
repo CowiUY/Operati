@@ -11,9 +11,8 @@ using System.Windows.Forms;
 
 namespace BackOffice
 {
-    public partial class GestionDeEquipo : Form
+    public partial class GestionDeEncuentros : Form
     {
-
         Bitmap bitmap;
         MySqlConnection sqlConn = new MySqlConnection();
         MySqlCommand sqlCmd = new MySqlCommand();
@@ -31,14 +30,12 @@ namespace BackOffice
 
 
 
-
-
-        public GestionDeEquipo()
+        public GestionDeEncuentros()
         {
             InitializeComponent();
         }
 
-        private void GestionDeEquipo_Load(object sender, EventArgs e)
+        private void GestionDeEncuentros_Load(object sender, EventArgs e)
         {
 
         }
@@ -51,7 +48,7 @@ namespace BackOffice
 
             sqlConn.Open();
             sqlCmd.Connection = sqlConn;
-            sqlCmd.CommandText = "SELECT * FROM gabriel_moreira.Equipo";
+            sqlCmd.CommandText = "SELECT * FROM gabriel_moreira.Encuentro";
 
             sqlRd = sqlCmd.ExecuteReader();
             sqlDt.Load(sqlRd);
@@ -63,16 +60,17 @@ namespace BackOffice
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregaEncuentro_Click(object sender, EventArgs e)
         {
             sqlConn.ConnectionString = "server" + server + ";" + "user id =" + username + ";" +
-           "password=" + password + ";" + "database=" + database;
+          "password=" + password + ";" + "database=" + database;
 
             try
             {
 
                 sqlConn.Open();
-                sqlQuery = "INSERT INTO  gabriel_moreira.Equipo (ID_Equipo , Nom_Equipo, Pais_Origen)" + "VALUES('" + txtIDEquipo.Text + "' , '" + txtNomEquipo.Text + "', '" + txtPaisOrigen.Text + "')";
+                sqlQuery = "INSERT INTO  gabriel_moreira.Encuentro (ID_Encuentro , Hora, Fecha)" + " VALUES ('" + txtIdEncuentro.Text + "' , '" + txtHora.Text + "', '" + txtFecha.Text + "')";
+
 
                 sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
                 sqlRd = sqlCmd.ExecuteReader();
@@ -92,35 +90,13 @@ namespace BackOffice
 
             }
             upLoadData();
-        }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-
-                DataView dv = sqlDt.DefaultView;
-                dv.RowFilter = string.Format("Nom_Equipo LIKE '%{0}%' ", txtBuscar.Text);
-                dataGridView1.DataSource = dv.ToTable();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-
-            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             sqlConn.ConnectionString = "server" + server + ";" + "user id =" + username + ";" +
-       "password=" + password + ";" + "database=" + database;
+         "password=" + password + ";" + "database=" + database;
 
 
 
@@ -133,12 +109,12 @@ namespace BackOffice
                 MySqlCommand sqlCmd = new MySqlCommand();
                 sqlCmd.Connection = sqlConn;
 
-                sqlCmd.CommandText = "UPDATE gabriel_moreira.Equipo SET ID_Equipo = @ID_Equipo , Nom_Equipo = @Nom_Equipo , Pais_Origen = @Pais_Origen";
+                sqlCmd.CommandText = "UPDATE gabriel_moreira.Encuentro SET ID_Encuentro = @ID_Encuentro , Hora = @Hora , Fecha = @Fecha";
 
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@ID_Equipo", txtIDEquipo.Text);
-                sqlCmd.Parameters.AddWithValue("@Nom_Equipo", txtNomEquipo.Text);
-                sqlCmd.Parameters.AddWithValue("@Pais_origen", txtPaisOrigen.Text);
+                sqlCmd.Parameters.AddWithValue("@ID_Encuentro", txtIdEncuentro.Text);
+                sqlCmd.Parameters.AddWithValue("@Hora", txtHora.Text);
+                sqlCmd.Parameters.AddWithValue("@fecha", txtFecha.Text);
 
                 sqlCmd.ExecuteNonQuery();
 
@@ -158,16 +134,16 @@ namespace BackOffice
             }
         }
 
-        private void btnBorrarEquipo_Click(object sender, EventArgs e)
+        private void btnBorrarEncuentro_Click(object sender, EventArgs e)
         {
             sqlConn.ConnectionString = "server" + server + ";" + "user id =" + username + ";" +
-           "password=" + password + ";" + "database=" + database;
+             "password=" + password + ";" + "database=" + database;
 
             sqlConn.Open();
 
             sqlCmd.Connection = sqlConn;
 
-            sqlCmd.CommandText = "DELETE FROM gabriel_moreira.Equipo WHERE Nom_Equipo = @Nom_Equipo";
+            sqlCmd.CommandText = "DELETE FROM gabriel_moreira.Encuentro WHERE ID_Evento = @ID_Evento";
 
             sqlCmd = new MySqlCommand(sqlQuery, sqlConn);
 
@@ -180,9 +156,10 @@ namespace BackOffice
             }
 
             upLoadData();
+
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void Reset_Click(object sender, EventArgs e)
         {
             try
             {
@@ -199,6 +176,7 @@ namespace BackOffice
 
             }
             catch { }
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,9 +184,9 @@ namespace BackOffice
             try
             {
 
-               txtIDEquipo.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                txtNomEquipo.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                txtPaisOrigen.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                txtIdEncuentro.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                txtFecha.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                txtHora.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
 
 
 
@@ -225,9 +203,22 @@ namespace BackOffice
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try
+            {
 
+                DataView dv = sqlDt.DefaultView;
+                dv.RowFilter = string.Format("ID_Encuentro LIKE '%{0}%' ", txtBuscar.Text);
+                dataGridView1.DataSource = dv.ToTable();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

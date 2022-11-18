@@ -6,7 +6,7 @@ namespace BackOffice
 
         public int ID_Usuario { get; set; }
 
-        public string Nom_Usuario { get; set; }
+       public string Nom_Usuario { get; set; }
 
         public string Mail { get; set; }
 

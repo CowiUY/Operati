@@ -24,7 +24,8 @@ namespace Operati2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Form formulario = new Login();
+            formulario.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -88,6 +89,11 @@ namespace Operati2
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void panPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -8,13 +8,12 @@ namespace BackOffice
 {
     public class Encuentro
     {
+        internal short ID_Persona;
+
         public int ID_Encuentro        { get; set; }
-        public int ID_Deporte          { get; set; }
-        public int ID_Categoria        { get; set; }
-        public int ID_Persona          { get; set; }
         public string Hora             { get; set; }
         public string Fecha            { get; set; }
-        public string Nom_Encuentro    { get; set; }
+       
     }
 
     public class Round

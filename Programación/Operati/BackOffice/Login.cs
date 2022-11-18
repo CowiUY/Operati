@@ -6,8 +6,10 @@ using BackOffice;
 namespace Operati2
 {
     public partial class Login : Form
-        match = false;
     {
+       bool match = false;
+        
+
         public Login()
         {
             InitializeComponent();
@@ -33,36 +35,25 @@ namespace Operati2
                 bool Igualdad = false;
                 String user = txtUsuario.Text;
                 String password = txtContraseña.Text;
-
-                if (Logica.VerificarSiExiste("Usuario", "Mail", user) == 3)
+                var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
+                int contador = 0;
+                if (usuarios != null)
                 {
-                    var u = Logica.GetUsuarios(2, user)[0];
-                    if (Logica.DesencriptamosContra(u.password, "gabriel_moreira") == password)
+                    foreach (var usuario in usuarios)
                     {
-                        match = true;
-                        uLog = u;
-                    }
-                    else
-                    {
-                        if (AjustesDeUsuario.language == "EN")
+                        if (usuario.Nom_Usuario == user && usuario.password == password && usuario.nivelPermiso == 3)
                         {
-                            MessageBox.Show("Incorrect password");
-                        }
-                        else if (AjustesDeUsuario.language == "ES")
-                        {
-                            MessageBox.Show("Contraseña incorrecta");
+                            Igualdad = true;
+                            this.Visible = false;
+                            Form boform = new BOForm();
+                            boform.Show();
+                            contador++;
+                            MessageBox.Show("Sesión iniciada correctamente como: " + usuario.Nom_Usuario);
                         }
                     }
-                }
-                else
-                {
-                    if (AjustesDeUsuario.language == "EN")
+                    if (contador == 0)
                     {
-                        MessageBox.Show("The user does no exist");
-                    }
-                    else if (AjustesDeUsuario.language == "ES")
-                    {
-                        MessageBox.Show("El usuario no existe");
+                        MessageBox.Show("Usuario Incorrecto");
                     }
                 }
 
@@ -72,8 +63,6 @@ namespace Operati2
 
                 MessageBox.Show(ex.Message);
             }
-
-
 
 
 
@@ -106,6 +95,6 @@ namespace Operati2
         }
 
 
-        Veridf
+        
     }
 }

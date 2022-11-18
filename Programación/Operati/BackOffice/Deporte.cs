@@ -9,8 +9,6 @@
 
         public string Categoria_Deporte { get; set; }
 
-        public string Nom_Categoria { get; set; }
-       
 
     }
 

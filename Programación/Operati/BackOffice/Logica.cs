@@ -229,7 +229,7 @@ namespace BackOffice
 
         } // hecho
 
-        public List<PuntuacionRound> GetPuntuaciones(int a, int constraint1, int constraint2, int constraint3)
+       /* public List<PuntuacionRound> GetPuntuaciones(int a, int constraint1, int constraint2, int constraint3)
         {
             List<PuntuacionRound> puntuacionRounds = null;
 
@@ -244,7 +244,7 @@ namespace BackOffice
             }return puntuacionRounds;
 
 
-        }          
+        }    */      
 
         public static List<Persona> GetPersonas(int a, string constraint) {
 
@@ -498,7 +498,7 @@ namespace BackOffice
 
         }  //hecho
 
-        public static void InsertarEncuentro(string Nom_encuentro, string Nom_Deporte, string nomArbitro, string HoraInicio, string Lugar, string Fecha) {
+     /*   public static void InsertarEncuentro(string Nom_encuentro, string Nom_Deporte, string nomArbitro, string HoraInicio, string Lugar, string Fecha) {
 
             Deportes_Categorizados x = GetDeporte(3, x.Nom_Deporte)[0];
 
@@ -513,7 +513,7 @@ namespace BackOffice
 
 
 
-        } //hecho
+        } //hecho */
 
         public static void InsertarPuntuacion(int ID_Encuentro, int Puntos, int ID_Equipo) {
 

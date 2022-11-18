@@ -84,7 +84,6 @@
   <ItemGroup>
     <Compile Include="Banner.cs" />
     <Compile Include="Categoria.cs" />
-    <Compile Include="DBConnect.cs" />
     <Compile Include="Deporte.cs" />
     <Compile Include="Deportista.cs" />
     <Compile Include="Encuentro.cs" />

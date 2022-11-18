@@ -308,17 +308,17 @@ namespace BackOffice
             switch (a) {
 
                 case 1:
-                    encuentros = cbd.SelectEncuentros($"SELECT * FROM Encuentro");
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM Encuentro");
                     break;
                 case 2:
-                    encuentros = cbd.SelectEncuentros($"SELECT * FROM  Encuentro WHERE ID_Encuentro = '{constraint}' OR Nom_Encuentro LIKE '%{constraint}%' ");
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM  Encuentro WHERE ID_Encuentro = '{constraint}' OR Nom_Encuentro LIKE '%{constraint}%' ");
                     break;
                 case 3:
-                    encuentros = cbd.SelectEncuentros($"SELECT * FROM Encuentro WHERE Nom_Encuentro = '{constraint}'");
+                    encuentros = cbd.SelectEncuentro($"SELECT * FROM Encuentro WHERE Nom_Encuentro = '{constraint}'");
                
                     break;
                 case 4:
-                    encuentros = cbd.SelectEncuentros($"SELCT * FROM Encuentro WHERE ID_Encuentro  = '{constraint}'");
+                    encuentros = cbd.SelectEncuentro($"SELCT * FROM Encuentro WHERE ID_Encuentro  = '{constraint}'");
                     break;
 
 
@@ -329,7 +329,6 @@ namespace BackOffice
             }return encuentros;
 
         }
-
 
         public static List<Banner> GetBanner(int a, string constraint) {
 
@@ -343,7 +342,7 @@ namespace BackOffice
                     break;
 
                 case 2:
-                    banners = cbd.SelectBanner($"SELECT * FROM Publicidad WHERE ID_Publicidad = '{constraint}' OR " + $"Titulo_Publicidad");
+                    banners = cbd.SelectBanner($"SELECT * FROM Publicidad WHERE ID_Publicidad = '{constraint}' OR  Titulo_Banner LIKE '{constraint}' ");
                     break;
 
                 case 3:
@@ -390,6 +389,38 @@ namespace BackOffice
 
 
         } //hecho
+
+        public static List<Categoria> GetCategoria(int a, string constraint) {
+
+            List<Categoria> categorias = new List<Categoria>();
+
+            switch (a) {
+
+                case 1:
+                    categorias = cbd.SelectCategorias("SELECT * FROM Categoria");
+                    break;
+
+                case 2:
+                    categorias = cbd.SelectCategorias($"SELECT FROM Categoria WHERE ID_Categoria = '{constraint}' OR ");
+                    break;
+
+                case 3:
+                    categorias = cbd.SelectCategorias($"SELECT * FROM Categoria WHERE Nom_Categoria = '{constraint}'");
+                    break;
+
+
+
+
+            }return categorias;
+
+
+
+
+
+
+
+
+        }
 
 
         
@@ -452,6 +483,14 @@ namespace BackOffice
 
         }  //hecho
 
+        public static void InsertarDeporteCategorizado(string nomdeporte,string nomcategoria, int idDeporte, int idCategoria) {
+
+            cbd.EjecutarSQL($"INSERT INTO Deportes_Categorizados (Nom_Deporte, Nom_Categoria, ID_Deporte, ID_Categoria) VALUES ('{nomdeporte}','{nomcategoria}', {idDeporte}, {idCategoria})");
+
+
+
+        }
+
         public static void InsertarDeporte(string nomdepor) {
 
             cbd.EjecutarSQL($"INSERT INTO Deporte (Nom_Deporte) VALUES ({nomdepor})"); 
@@ -459,18 +498,9 @@ namespace BackOffice
 
         }  //hecho
 
-
-
-
-
-
-
-
-
-
         public static void InsertarEncuentro(string Nom_encuentro, string Nom_Deporte, string nomArbitro, string HoraInicio, string Lugar, string Fecha) {
 
-            Deporte x = GetDeporte(3, Nom_Deporte)[0];
+            Deportes_Categorizados x = GetDeporte(3, x.Nom_Deporte)[0];
 
             int ID_Deporte = x.ID_Deporte;
 
@@ -483,8 +513,7 @@ namespace BackOffice
 
 
 
-        }
-
+        } //hecho
 
         public static void InsertarPuntuacion(int ID_Encuentro, int Puntos, int ID_Equipo) {
 
@@ -506,7 +535,7 @@ namespace BackOffice
 
 
 
-        }
+        } //hecho
 
         public static void InsertarEquipo(string nom, string origen) {
 
@@ -514,7 +543,7 @@ namespace BackOffice
 
 
 
-        } 
+        }  //hecho
 
         public static void InsertarArbitro(string nom, string ape, string nacionalidad) {
 
@@ -523,7 +552,7 @@ namespace BackOffice
             cbd.EjecutarSQL($"INSERT INTO Arbitro (ID_Persona, Nom_Arbitro, Ape_Arbitro, Nacionalidad) VALUES ({ID_Persona}, '{nom}', '{ape}', '{nacionalidad}')");
 
 
-        }
+        } //hecho
 
 
 

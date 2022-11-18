@@ -129,6 +129,12 @@
     <Compile Include="GestionDeDeportes.Designer.cs">
       <DependentUpon>GestionDeDeportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionDeEncuentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDeEncuentros.Designer.cs">
+      <DependentUpon>GestionDeEncuentros.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionDeEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDeDeportes.resx">
       <DependentUpon>GestionDeDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDeEncuentros.resx">
+      <DependentUpon>GestionDeEncuentros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionDeEquipo.resx">
       <DependentUpon>GestionDeEquipo.cs</DependentUpon>

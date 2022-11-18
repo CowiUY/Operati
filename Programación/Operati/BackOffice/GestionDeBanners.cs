@@ -222,8 +222,7 @@ namespace BackOffice
 
             private void button2_Click(object sender, EventArgs e)
             {
-                var banners = Logica.GetBanner(2, busqueda);
-                int count = 0;
+                
 
 
             }

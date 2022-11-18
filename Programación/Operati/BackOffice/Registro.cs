@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BackOffice;
 
 namespace Operati2
 {
@@ -36,8 +37,8 @@ namespace Operati2
 
                         var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
                         Usuario newUsu = new Usuario();
-                        newUsu.UserID = txtNombreUsuario.Text;
-                        newUsu.mail = txtMailusuario.Text;
+                        newUsu.Nom_Usuario = txtNombreUsuario.Text;
+                        newUsu.Mail = txtMailusuario.Text;
 
                         newUsu.password = txtContraUsuario.Text;
 

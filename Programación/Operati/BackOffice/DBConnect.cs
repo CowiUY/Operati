@@ -555,15 +555,15 @@ namespace BackOffice
 
                     encuentro.ID_Persona = Convert.ToInt16($"{dataReader.GetString("ID_Persona")}");
 
-                    encuentro.ID_Categoria = Convert.ToInt16($"{dataReader.GetString("ID_Categoria")}");
+                    //  encuentro.ID_Categoria = Convert.ToInt16($"{dataReader.GetString("ID_Categoria")}");
 
-                    encuentro.ID_Deporte = Convert.ToInt16($"{dataReader.GetString("ID_Deporte")}");
+                    // encuentro.ID_Deporte = Convert.ToInt16($"{dataReader.GetString("ID_Deporte")}");
 
                     encuentro.Hora = $"{dataReader.GetString("Hora")}";
 
                     encuentro.Fecha = $"{dataReader.GetString("Fecha")}";
 
-                    encuentro.Nom_Encuentro = $"{dataReader.GetString("Nom_Encuentro")}";
+                  //  encuentro.Nom_Encuentro = $"{dataReader.GetString("Nom_Encuentro")}";
 
                     encuentros.Add(encuentro);
 

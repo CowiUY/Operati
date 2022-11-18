@@ -44,7 +44,8 @@ namespace BackOffice
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            Form formEventos = new 
+            Form formEventos = new GestionDeEventos();
+            formEventos.Show();
         }
     }
 }

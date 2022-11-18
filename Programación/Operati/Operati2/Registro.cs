@@ -37,7 +37,7 @@ namespace Operati2
 
                         var usuarios = Logica.DeserializeUsuarios(Logica.GetJson("SerialJson\\Usuarios.json"));
                         Usuario newUsu = new Usuario();
-                        newUsu.UserID = txtNombreUsuario.Text;
+                        newUsu.ID_Usuario = txtNombreUsuario.Text;
                         newUsu.mail = txtMailusuario.Text;
 
                         newUsu.password = txtContraUsuario.Text;

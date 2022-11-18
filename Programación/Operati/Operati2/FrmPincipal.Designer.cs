@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmuno));
             this.panPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Imagen = new System.Windows.Forms.PictureBox();
-            this.btnConfig = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnMas = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,7 +48,6 @@
             this.panPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panPanel.Controls.Add(this.textBox1);
             this.panPanel.Controls.Add(this.Imagen);
-            this.panPanel.Controls.Add(this.btnConfig);
             this.panPanel.Controls.Add(this.btnLogin);
             this.panPanel.Controls.Add(this.btnBuscar);
             this.panPanel.Controls.Add(this.btnMas);
@@ -57,6 +55,14 @@
             this.panPanel.Name = "panPanel";
             this.panPanel.Size = new System.Drawing.Size(1011, 113);
             this.panPanel.TabIndex = 22;
+            this.panPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panPanel_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(153, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(433, 20);
+            this.textBox1.TabIndex = 18;
             // 
             // Imagen
             // 
@@ -68,17 +74,6 @@
             this.Imagen.TabIndex = 17;
             this.Imagen.TabStop = false;
             this.Imagen.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Location = new System.Drawing.Point(822, 61);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(52, 33);
-            this.btnConfig.TabIndex = 16;
-            this.btnConfig.Text = "⚙️";
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnLogin
             // 
@@ -127,13 +122,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(728, 312);
             this.dataGridView1.TabIndex = 25;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(153, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(433, 20);
-            this.textBox1.TabIndex = 18;
-            // 
             // Frmuno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,7 +146,6 @@
 
         private System.Windows.Forms.Panel panPanel;
         private System.Windows.Forms.PictureBox Imagen;
-        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox btnMas;
